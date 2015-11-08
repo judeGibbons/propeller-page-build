@@ -37,6 +37,17 @@ body {
 ol, ul {
   list-style: none;
 }
+
+/*chrome user stylesheet*/
+ul, menu, dir {
+    display: block;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
 blockquote, q {
   quotes: none;
 }
@@ -80,10 +91,9 @@ table {
   margin-bottom: 57px;
 }
 
-#social__icons {
+.header__social--links {
   width: 190px;
   height: 40px;
-  background-color: red;
   position: relative;
   text-align: center;
   margin: 0 auto 130px auto;
@@ -148,7 +158,7 @@ footer {
 
 
 #callstoaction > div {
-  /* height: 25%;  these are 317px, should be 310  but don't need them anyway... */
+  height: 25%;
   width: 25%;
   float: left;
   position: relative;
@@ -163,17 +173,18 @@ footer {
   opacity: 0.7;
   background-color: #000;
   z-index: 10;
+  display: block;
 }
 
 .callstoaction__text, .callstoaction__graphic, .callstoaction__click{
   position: relative;
   text-align: center;
-  top: 30%;
+  top: 25%;
 } /* this needs tweaking, also toggle opacity on rollover */
 
 .callstoaction__graphic {
-  width: 21%; /*make 65 pixels until break point*/
-  margin: 0 auto;
+  /*width: 21%; make 65 pixels until break point*/
+  margin: 20px auto;
 }
 
 .callstoaction__graphic img {
@@ -181,8 +192,37 @@ footer {
   max-width: 65px;
 }
 
+.carousel__controls {
+  width: 140px; /* NOT CENTRED, FIX THIS */
+  height: 14px;
+  position: absolute;
+  bottom: 25px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: visible;
+}
 
+li[class^="carousel__slide"] {
+  /*width: 10px;
+  height: 10px; needs to be responsive */
+  float: left;
+}
 
+li[class^="carousel__slide"] img {
+  display: block;
+}
+
+li[class^="carousel__marker"] {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px; /* except when rotated? */
+  background-color: #fff;
+  float: left;
+}
+
+li[class^="carousel__marker"]:last-child {
+  margin-right: 0;
+}
 
 .social__contacts > div {
   width: 32.258%; /* 400px at full width */
@@ -199,20 +239,63 @@ footer {
   margin-right: 0;
 }
 
-
-
 .social__contacts {
   border-bottom: 1px solid #fff;
   margin-bottom: 2px;
 }
 
 
+.social__contacts--instagram--image {
+  display: block;
+  float: left;
+  margin-right: 2.5%;
+}
+
+.social__contacts--instagram--image:last-child {
+  margin-right: 0;
+}
+
 
 footer p {
-  padding-top: 34px;
+  padding-top: 32px;
   border-top: 1px solid #fff;
 }
 
+
+
+li[class^="header__social--links"], span[class^="footer__social--links"] {
+  display: inline-block;
+  position: relative;
+}
+
+li[class^="header__social--links"] {
+  float: left;
+  margin-right: 30px;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+
+li[class^="header__social--links"] a {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+span[class^="footer__social--links"] {
+  top: 2px;
+  margin-right: 20px;
+}
+
+li[class^="header__social--links"]:last-child, span[class^="footer__social--links"]:last-child {
+  margin-right: 0;
+}
+
+span[class^="footer__social--links"] .a11y {
+  position: absolute;
+  left: -9999px;
+}
 
 /* ====      DESIGN      ==== */
 
@@ -306,7 +389,7 @@ p, label { /* do I want this? ems not rems... */
 
 
 .social__contacts--text {
-  margin: 0 40px; /* changed from 52px because heavier font wrapped to 3 lines */
+  margin: 0 40px 40px 40px; /* changed from 52px because heavier font wrapped to 3 lines */
 }
 
 .social__contacts--tweet {
@@ -337,6 +420,13 @@ footer a {
   color: #fff;
 }
 
+
+.footer__contact::after {
+  content: "|";
+  margin: 0 20px;
+}
+
+
 .title, .em {
   font-style: italic;
 }
@@ -358,15 +448,82 @@ input[type=text] {
   box-sizing: border-box;
 }
 
-button, label {
+/*button, label {
   display: block;
-}
+}*/
 
-button {
-  margin: 10px auto;
+
+
+.social__contacts button {
   -webkit-appearance: none;
   -moz-appearance: none;
+  background-color: transparent;
+  margin: 10px auto 16px auto;
+  border: 1px solid #fff;
+  width: 190px;
+  height: 35px;
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  color: #fff;
+  font-family: "Montserrat", "Arial", sans-serif;
+  text-transform: uppercase;
 }
+
+
+.social__contacts fieldset {
+  margin: 0 52px 14px 52px;
+  border: 1px solid #fff;
+  text-align: left;
+}
+
+
+.social__contacts input[type="text"], .social__contacts label {
+  display: inline-block;
+}
+
+.social__contacts input[type="text"] {
+  width: 60%;
+  background-color: transparent;
+  border: 0;
+  font-size: 1em;
+  font-family: "Volkhov", "Palatino", serif;
+  color: #fff;
+}
+
+.social__contacts label {
+  width: 26%;
+  margin: 9px 2% 9px 4%;
+  border-right: 1px solid #fff;
+  line-height: 1rem;
+}
+
+
+#signup--birthday--day, #signup--birthday--month {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/*
+#signup--birthday--day option, #signup--birthday--day option {
+  font-size: 11px;
+}
+
+#signup--birthday--day option:first-child, #signup--birthday--day option:first-child {
+  font-size: 18pt;
+}
+*/
+
+/* ====    INTERACTION   ==== */
+
+
+#social__contacts--signup button {
+  margin-bottom: 0;
+}
+
+
 
 
 /* ====      IMAGES      ==== */
@@ -407,6 +564,84 @@ button {
   z-index: -10;
   content: '';
   left: 0;
+}
+
+li[class^="header__social--links"] img {
+  position: relative;
+}
+
+li.header__social--links--facebook img {
+  top: 7px;
+}
+
+li.header__social--links--twitter img {
+  top: 10px;
+}
+
+li.header__social--links--instagram img {
+  top: 8px;
+}
+
+
+.callstoaction__graphic {
+  width: 65px;
+  height: 64px;
+  background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -35px -20px;
+}
+
+#callstoaction img {
+  display: block;
+}
+
+
+span[class^="footer__social--links"] a {
+  background-image: url("../graphics/sprite-logos-graphics-100x84.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+
+.footer__social--links--facebook a {
+  width: 8px;
+  height: 14px;
+  background-position: -34px -6px;
+}
+
+.footer__social--links--facebook a:hover {
+  background-position: -42px -6px;
+}
+
+
+.footer__social--links--twitter a {
+  width: 14px;
+  height: 11px;
+  background-position: -21px -11px;
+}
+
+.footer__social--links--twitter a:hover {
+  background-position: -21px -0px;
+}
+
+
+.footer__social--links--instagram a {
+  width: 14px;
+  height: 13px;
+  background-position: -21px -35px;
+}
+
+.footer__social--links--instagram:hover a {
+  background-position: -21px -22px;
+}
+
+
+
+
+
+#propeller__icon {
+  width: 25px;
+  height: 36px;
+  margin: 36px auto 0 auto;
+  background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -10px -48px;
 }
 
 

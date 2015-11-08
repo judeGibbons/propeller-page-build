@@ -29,7 +29,7 @@
       <div class="container">
 
         <div id="header__logo">
-          <img src="graphics/logo-white-280x280.png" alt="Propeller logo">
+          <img src="graphics/logo-white-280x280.png" alt="PBT Propeller 2015">
         </div>
       
         <nav>
@@ -43,7 +43,13 @@
           </ul>
         </nav>
 
-        <section id="social__icons"></section>
+        <section class="header__social--links">
+          <ul>
+            <li class="header__social--links--facebook"><a href="https://www.facebook.com/propellercomms" target="_blank"><img src="graphics/facebook-logo-w.png" alt="Our Facebook page"></a></li>
+            <li class="header__social--links--twitter"><a href="https://twitter.com/PropellerComms" target="_blank"><img src="graphics/twitter-logo-w.png" alt="Our Twitter feed"></a></li>
+            <li class="header__social--links--instagram"><a href="https://instagram.com/propellercommslondon/" target="_blank"><img src="graphics/instagram-logo-w.png" alt="Our Instagram feed"></a></li>
+          </ul>
+        </section>
 
       </div> <!--container-->
 
@@ -60,7 +66,7 @@
           <img src="graphics/cta1-book-310x310.jpg" alt="Book a table">
           <div class="callstoaction__overlay">
             <h2 class="callstoaction__text">Book a table</h2>
-            <div class="callstoaction__graphic"><img src="graphics/arrows-65x64.png" alt=""></div>
+            <div class="callstoaction__graphic"></div>
             <p class="callstoaction__click">click here</p>
           </div>
         </div>
@@ -68,7 +74,7 @@
           <img src="graphics/cta2-menus-310x310.jpg" alt="View our menus">
           <div class="callstoaction__overlay">
             <h2 class="callstoaction__text">View our menus</h2>
-            <div class="callstoaction__graphic"><img src="graphics/arrows-65x64.png" alt=""></div>
+            <div class="callstoaction__graphic"></div>
             <p class="callstoaction__click">click here</p>
           </div>
         </div>   
@@ -76,7 +82,7 @@
           <img src="graphics/cta3-xmas-310x310.jpg" alt="Our Christmas ideas">
           <div class="callstoaction__overlay">
             <h2 class="callstoaction__text">Our Christmas ideas</h2>
-            <div class="callstoaction__graphic"><img src="graphics/arrows-65x64.png" alt=""></div>
+            <div class="callstoaction__graphic"></div>
             <p class="callstoaction__click">click here</p>
           </div>
         </div>
@@ -84,7 +90,7 @@
           <img src="graphics/cta4-contact-310x310.jpg" alt="Contact us">
           <div class="callstoaction__overlay">
             <h2 class="callstoaction__text">Contact us</h2>
-            <div class="callstoaction__graphic"><img src="graphics/arrows-65x64.png" alt=""></div>
+            <div class="callstoaction__graphic"></div>
             <p class="callstoaction__click">click here</p>
           </div>
         </div>
@@ -93,6 +99,21 @@
 
 
       <section id="carousel">
+
+        <ul class="carousel__controls">
+          <li class="carousel__marker--one"><a href=""></a></li>
+          <li class="carousel__marker--two"><a href=""></a></li>
+          <li class="carousel__marker--three"><a href=""></a></li>
+          <li class="carousel__marker--four"><a href=""></a></li>
+          <li class="carousel__marker--five"><a href=""></a></li>
+          <li class="carousel__marker--six"><a href=""></a></li>
+          <li class="carousel__marker--seven"><a href=""></a></li>
+        </ul>
+
+        <ul id="carousel__slides">
+          <li class="carousel__slide--one"><img src="graphics/carousel-image-1240x490.jpg" alt="Thank you"></li>
+        </ul>
+
 
 
       </section>
@@ -112,7 +133,7 @@
 
           <p>@PBT_propeller</p>
 
-          <button>Follow</button>
+          <button type="button">Follow</button>
 
           <p class="social__contacts--tweet">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<span class="social__contacts--twitter-timestamp">an hour ago</span>
           </p>
@@ -126,7 +147,12 @@
 
           <p>PBT_propeller</p>
 
-          <button>Follow</button>
+          <button type="button">Follow</button>
+
+          <ul>
+            <li class="social__contacts--instagram--image"><img src="graphics/instapic1-190x190.jpg" alt="spinach and pomegranate salad"></li>
+            <li class="social__contacts--instagram--image"><img src="graphics/instapic2-190x190.jpg" alt="orange with cloves"></li>
+          </ul>
 
         </div>
 
@@ -137,12 +163,71 @@
 
           <p class="social__contacts--text">Subscribe to our newsletter and never miss out on our exclusive offers!</p>
 
-          <form>
-            <p>name</p>
-            <p>email</p>
-            <p>birthday</p>
+          <form class="social__contacts--signup__form">
+            <fieldset>
+              <label for="signup--name">name</label>
+                <input id="signup--name" type="text" required />
+              </label>
+            </fieldset>
+            <fieldset>
+              <label for="signup--email">email</label>
+                <input id="signup--email" type="text" required /> <!-- make type email? -->
+              </label>
+            </fieldset>
 
-            <button>Submit</button>
+            <fieldset>
+              <label for="signup--birthday">birthday</label>
+              <select id="signup--birthday--day" name="day">
+                <option value="day">dd</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+              <select id="signup--birthday--month" name="month">
+                <option value="month">mm</option>
+                <option value="january">01</option>
+                <option value="february">02</option>
+                <option value="march">03</option>
+                <option value="april">04</option>
+                <option value="may">05</option>
+                <option value="june">06</option>
+                <option value="july">07</option>
+                <option value="august">08</option>
+                <option value="september">09</option>
+                <option value="october">10</option>
+                <option value="november">11</option>
+                <option value="december">12</option>
+              </select>
+            </fieldset>
+            <button type="submit">Submit</button>
           </form>
 
         </div>
@@ -160,15 +245,14 @@
       <div id="footer__home-background"></div>
 
 
-        <div class="container">
+      <div class="container">
 
-        <p>PBT Propeller     |     1&#8211;3 Windsor Court     |     Rugby     |     Warwickshire     |     CV21 3BH     |     <a href="mailto:pbt@propcom.co.uk?Subject=Contact%20from%20website">pbt@propcom.co.uk</a>     |     <a href="tel:441788566270">01788 566270</a>     |    <span class="social__links">twitter, fb, instagram</span>  </p>
+        <p><span class="footer__contact">PBT Propeller</span><span class="footer__contact">1&#8211;3 Windsor Court </span><span class="footer__contact">Rugby</span><span class="footer__contact">Warwickshire</span><span class="footer__contact">CV21 3BH </span><span class="footer__contact"><a href="mailto:pbt@propcom.co.uk?Subject=Contact%20from%20website">pbt@propcom.co.uk</a></span><span class="footer__contact"><a href="tel:441788566270">01788 566270</a></span><span class="footer__social--links--facebook"><a href="https://www.facebook.com/propellercomms" target="_blank"><span class="a11y">Our Facebook page</span></a></span><span class="footer__social--links--twitter"><a href="https://twitter.com/PropellerComms" target="_blank"><span class="a11y">Our Twitter feed</span></a></span><span class="footer__social--links--instagram"><a href="https://instagram.com/propellercommslondon/" target="_blank"><span class="a11y">Our Instagram feed</span></a></span></p>
+
+        <div id="propeller__icon"></div>
 
 
-        <div id="propeller__icon"><img src="graphics/prop-white-25x36.png" alt="Propeller icon"></div>
-
-
-        </div> <!--container-->
+      </div> <!--container-->
 
     </footer>
 
