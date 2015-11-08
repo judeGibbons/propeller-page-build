@@ -1,0 +1,453 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/* ====      RESET       ==== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ====   END OF RESET   ==== */
+
+
+
+
+/* ====    MAIN LAYOUT   ==== */
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 77.5rem; /* full width is 1240px */
+}
+
+#header {
+  position: relative;
+}
+
+#header__logo {
+  margin-top: 142px;
+  margin-bottom: 52px;
+}
+
+
+#nav__list {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 57px;
+}
+
+#social__icons {
+  width: 190px;
+  height: 40px;
+  background-color: red;
+  position: relative;
+  text-align: center;
+  margin: 0 auto 130px auto;
+}
+
+#introduction {
+  margin: 0 auto;
+  padding: 72px 25.4%; /* h padding 315px at full width */
+}
+
+#callstoaction { /* should these be list items? */
+}
+
+#carousel {
+  height: 490px;
+  background-color: orange;
+}
+
+.social__contacts {
+  margin-top: 42px;
+  height: 332px;
+  padding-bottom: 68px;
+}
+
+footer {
+  position: relative;
+  height: 155px;
+}
+
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+
+
+
+
+/* === BLOCK LEVEL LAYOUT === */
+
+
+#nav__list li {
+  float: left;
+  width: 190px;
+  margin: 18px 10px;
+}
+
+#nav__list li:first-child {
+  margin-left: 0;
+}
+
+#nav__list li:last-child {
+  margin-right: 0;
+}
+
+
+
+
+#callstoaction > div {
+  /* height: 25%;  these are 317px, should be 310  but don't need them anyway... */
+  width: 25%;
+  float: left;
+  position: relative;
+}
+
+
+.callstoaction__overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0.7;
+  background-color: #000;
+  z-index: 10;
+}
+
+.callstoaction__text, .callstoaction__graphic, .callstoaction__click{
+  position: relative;
+  text-align: center;
+  top: 30%;
+} /* this needs tweaking, also toggle opacity on rollover */
+
+.callstoaction__graphic {
+  width: 21%; /*make 65 pixels until break point*/
+  margin: 0 auto;
+}
+
+.callstoaction__graphic img {
+  width: 100%;
+  max-width: 65px;
+}
+
+
+
+
+.social__contacts > div {
+  width: 32.258%; /* 400px at full width */
+  float: left;
+  position: relative;
+  margin: 0 0.80645%; /* 10px at full width */
+}
+
+.social__contacts > div:first-child {
+  margin-left: 0;
+}
+
+.social__contacts > div:last-child {
+  margin-right: 0;
+}
+
+
+
+.social__contacts {
+  border-bottom: 1px solid #fff;
+  margin-bottom: 2px;
+}
+
+
+
+footer p {
+  padding-top: 34px;
+  border-top: 1px solid #fff;
+}
+
+
+/* ====      DESIGN      ==== */
+
+body {
+  background-color: #000;
+}
+
+#introduction {
+  background-color: #fff;
+}
+
+#nav__list li:hover, button:hover {
+  background-color: #fff; /* opacity on rollover */
+}
+
+
+
+
+/* ====       TYPE       ==== */
+
+body {
+  font-family: "Volkhov", "Palatino", serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, #nav__list li {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#nav__list a, footer a {
+  text-decoration: none;
+}
+
+
+h1 {
+  color: #000;
+}
+
+p, label { /* do I want this? ems not rems... */
+  margin-bottom: 0.4em;
+  line-height: 1.5625;
+}
+
+
+#introduction h1 {
+  font-size: 2.5rem;
+  line-height: 1.125;
+}
+
+#introduction p {
+  margin-top: 28px;
+  line-height: 1.3888;
+}
+
+
+#nav__list li {
+  font-weight: normal;
+  font-size: 1.125rem;
+}
+
+#nav__list li a {
+  color: #fff;
+  font-weight: normal;
+}
+
+#callstoaction {
+  color: #fff;
+}
+
+.callstoaction__text {
+  font-size: 1.125rem;
+  font-weight: normal;
+}
+
+
+
+.social__contacts {
+  color: #fff;
+}
+
+.social__contacts h2 {
+  font-weight: normal;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 22px;
+}
+
+
+.social__contacts--text {
+  margin: 0 40px; /* changed from 52px because heavier font wrapped to 3 lines */
+}
+
+.social__contacts--tweet {
+  margin: 0 52px;
+}
+
+.social__contacts--tweet, footer p {
+  font-size: 0.9375rem;
+  line-height: 1.4375; /* 15/23 but doesn't look like it; divide by rems = 1.5333, still not quite right*/ 
+}
+
+.social__contacts--tweet {
+  text-align: left;
+}
+
+.social__contacts--twitter-timestamp {
+  display: block;
+  text-align: right;
+}
+
+footer p {
+  font-family: "Montserrat", "Arial", "sans-serif";
+  font-weight: normal;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+}
+
+.title, .em {
+  font-style: italic;
+}
+
+.strong {
+  font-style: bold;
+}
+
+
+
+
+
+/* ====   FORM ELEMENTS  ==== */
+
+input[type=text] {
+  margin-bottom: 0.4em;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button, label {
+  display: block;
+}
+
+button {
+  margin: 10px auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+/* ====      IMAGES      ==== */
+
+#header__landing-background, #header__landing-background::after {
+  width: 100%;
+  height: 960px;
+  position: absolute;
+  top: 0;
+}
+
+#header__landing-background {
+  background: url("../graphics/landing-bg-top-q18-2000x960.jpg") no-repeat top center;
+  z-index: -20;
+}
+
+#header__landing-background::after {
+  background: url("../graphics/pattern-landing-overlay-3x3.png") repeat top center;
+  z-index: -10;
+  content: '';
+  left: 0;
+}
+
+#footer__home-background, #footer__home-background::after {
+  width: 100%;
+  height: 865px;
+  position: absolute;
+  bottom: 0;
+}
+
+#footer__home-background {
+  background: url("../graphics/home-bg-btm-q18-2000x865-blur-desat.jpg") no-repeat bottom center;
+  z-index: -20;
+}
+
+#footer__home-background::after {
+  background: url("../graphics/pattern-home-overlay-3x3.png") repeat bottom center;
+  z-index: -10;
+  content: '';
+  left: 0;
+}
+
+
+
+/* ====   MEDIAQUERIES   ==== */
+
+
+/* -->>> LESS THAN 50em <<<-- */
+
+@media only screen and (max-width: 50em), only screen and (max-device-width: 50em) {
+
+
+
+
+
+} /*end of media query max-width 50em */
+
+
+
+/* -->>> LESS THAN 30em <<<-- */
+
+@media only screen and (max-width: 30em), only screen and (max-device-width: 30em) {
+
+
+
+
+
+} /*end of media query max-width 30em */
+
+
+
+
+/* ==== for testing ==== 
+
+
+#introduction {
+  background-color: rgba(255, 50, 0, 0.8);
+};
+
+.container {
+  background: rgba(50, 255, 0, 0.8);
+};
+
+/* ==== end of testing ==== */
