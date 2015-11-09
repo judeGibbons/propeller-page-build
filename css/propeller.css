@@ -72,7 +72,7 @@ table {
   position: relative;
   margin: 0 auto;
   padding: 0 10px;
-  width: 77.5rem; /* full width is 1240px */
+  max-width: 77.5rem; /* full width is 1240px */
 }
 
 #header {
@@ -105,6 +105,7 @@ table {
 }
 
 #callstoaction { /* should these be list items? */
+  overflow: hidden;
 }
 
 #carousel {
@@ -121,7 +122,7 @@ table {
 
 footer {
   position: relative;
-  height: 155px;
+  min-height: 155px; /* fix at smaller sizes, force pic to stick to btm of viewport; */
 }
 
 
@@ -136,7 +137,10 @@ footer {
 
 
 
+.xxxxxxxxxx {
+display: inline-block;
 
+}
 
 /* === BLOCK LEVEL LAYOUT === */
 
@@ -158,12 +162,52 @@ footer {
 
 
 
-#callstoaction > div {
-  height: 25%;
+
+
+/*
+div[class^="callstoaction"] {
   width: 25%;
+  height: 0;
+  padding-bottom: 25%;
+  float: left;
+  position: relative;
+}*/
+
+
+#callstoaction > div {
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
   float: left;
   position: relative;
 }
+
+#callstoaction > div img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  display: block;
+}
+
+/*
+li[class^="callstoaction"] a {
+        <div id="callstoaction--book">
+          <img src="graphics/cta1-book-310x310.jpg" alt="Book a table">
+          <div class="callstoaction__overlay">
+            <h2 class="callstoaction__text">Book a table</h2>
+            <div class="callstoaction__graphic"></div>
+            <p class="callstoaction__click">click here</p>
+          </div>
+
+*/
+
+
+
+
+
+
+
+
 
 
 .callstoaction__overlay {
@@ -194,25 +238,25 @@ footer {
 }
 
 
-.carousel__controls__container {
+.carousel__indicator__container {
   position: absolute;
   bottom: 25px;
   width: 100%;
 }
 
-.carousel__controls {
+.carousel__indicator {
   display: inline-block;
 }
 
 
-.carousel__marker--one {
+.carousel__indicator--one {
   -transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
 }
 
 /*is this needed?*/
-li[class^="carousel__marker"] a {
+li[class^="carousel__indicator"] a {
   display: block;
   width: 100%;
   height: 100%;
@@ -229,7 +273,7 @@ li[class^="carousel__slide"] img {
   display: block;
 }
 
-li[class^="carousel__marker"] {
+li[class^="carousel__indicator"] {
   width: 10px;
   height: 10px;
   margin-right: 10px; /* except when rotated? */
@@ -237,7 +281,7 @@ li[class^="carousel__marker"] {
   float: left;
 }
 
-li[class^="carousel__marker"]:last-child {
+li[class^="carousel__indicator"]:last-child {
   margin-right: 0;
 }
 
@@ -262,15 +306,30 @@ li[class^="carousel__marker"]:last-child {
 }
 
 
+
+
 .social__contacts--instagram--image {
-  display: block;
+  width: 48.75%;
+  height: 0;
+  padding-bottom: 48.75%;
   float: left;
+  display: block;
+  position: relative;
   margin-right: 2.5%;
 }
 
 .social__contacts--instagram--image:last-child {
   margin-right: 0;
 }
+
+.social__contacts--instagram--image img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  display: block;
+}
+
+
 
 
 footer p {
@@ -300,7 +359,7 @@ li[class^="header__social--links"] a {
   height: 36px;
 }
 
-span[class^="footer__social--links"] {
+span[class^="footer__social--links--"] {
   top: 2px;
   margin-right: 20px;
 }
@@ -355,11 +414,10 @@ h1 {
   color: #000;
 }
 
-p, label { /* do I want this? ems not rems... */
-  margin-bottom: 0.4em;
-  line-height: 1.5625;
+p {
+    font-style: italic;
+    margin-bottom: 0.4rem;
 }
-
 
 #introduction h1 {
   font-size: 2.5rem;
@@ -430,6 +488,7 @@ p, label { /* do I want this? ems not rems... */
 footer p {
   font-family: "Montserrat", "Arial", "sans-serif";
   font-weight: normal;
+  font-style: normal;
   color: #fff;
 }
 
@@ -512,6 +571,7 @@ input[type=text] {
   margin: 9px 2% 9px 4%;
   border-right: 1px solid #fff;
   line-height: 1rem;
+  font-style: italic;
 }
 
 
@@ -553,12 +613,12 @@ input[type=text] {
 }
 
 #header__landing-background {
-  background: url("../graphics/landing-bg-top-q18-2000x960.jpg") no-repeat top center;
+  background: url("../graphics/landing-bg-top-q18-2000x960.jpg") no-repeat center center;
   z-index: -20;
 }
 
 #header__landing-background::after {
-  background: url("../graphics/pattern-landing-overlay-3x3.png") repeat top center;
+  background: url("../graphics/pattern-landing-overlay-3x3.png") repeat center center;
   z-index: -10;
   content: '';
   left: 0;
@@ -650,10 +710,6 @@ span[class^="footer__social--links"] a {
   background-position: -21px -22px;
 }
 
-
-
-
-
 #propeller__icon {
   width: 25px;
   height: 36px;
@@ -663,18 +719,45 @@ span[class^="footer__social--links"] a {
 
 
 
+
+
 /* ====   MEDIAQUERIES   ==== */
 
 
-/* -->>> LESS THAN 50em <<<-- */
+/* -->>> MORE THAN 2000px, width of bg pic <<<-- */
+/* to expand background pictures when container is more than the width of the picture */
+@media only screen and (min-width: 125em), only screen and (min-device-width: 125em) {
 
-@media only screen and (max-width: 50em), only screen and (max-device-width: 50em) {
+#header__landing-background, #footer__home-background {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+} /*end of media query min-width 125em */
 
 
 
 
 
-} /*end of media query max-width 50em */
+
+
+/* -->>> LESS THAN 1260px, width of main container <<<-- */
+
+@media only screen and (max-width: 91.25em), only screen and (max-device-width: 91.25em) {
+
+
+
+
+
+} /*end of media query max-width 91.25em */
+
+
+
+
+
+
+
 
 
 
@@ -694,12 +777,29 @@ span[class^="footer__social--links"] a {
 /* ==== for testing ==== 
 
 
-#introduction {
-  background-color: rgba(255, 50, 0, 0.8);
-};
+NOTES
 
-.container {
-  background: rgba(50, 255, 0, 0.8);
-};
+2000/1260/1000
+
+.callstoaction__text, .callstoaction__graphic, .callstoaction__click 
+reduce 'top'
+
+social contacts, no margins [or < 1260?]
+remove height from social__contacts div
+form labels above inputs
+
+ipad = c.788px
+
+
+
+Beware of Safari not supporting background-size shorthand!
+
+
+
+Mobile first vs mobile last
+
+Vendor prefixes
+
+
 
 /* ==== end of testing ==== */
