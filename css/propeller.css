@@ -113,9 +113,7 @@ table {
   padding: 72px 25.4%; /* h padding 315px at full width */
 }
 
-#callstoaction { /* should these be list items? */
-  overflow: hidden;
-}
+
 
 #carousel {
   height: 490px;
@@ -160,6 +158,7 @@ display: inline-block;
   margin: 18px 10px;*/
   width: 11.875rem;
   margin: 18px 0.625rem;
+  border-radius: 4px;
 }
 
 #nav__list li:first-child {
@@ -169,21 +168,6 @@ display: inline-block;
 #nav__list li:last-child {
   margin-right: 0;
 }
-
-
-
-
-
-
-/*
-div[class^="callstoaction"] {
-  width: 25%;
-  height: 0;
-  padding-bottom: 25%;
-  float: left;
-  position: relative;
-}*/
-
 
 #callstoaction > div {
   width: 25%;
@@ -200,23 +184,6 @@ div[class^="callstoaction"] {
   display: block;
 }
 
-/*
-li[class^="callstoaction"] a {
-        <div id="callstoaction--book">
-          <img src="graphics/cta1-book-310x310.jpg" alt="Book a table">
-          <div class="callstoaction__overlay">
-            <h2 class="callstoaction__text">Book a table</h2>
-            <div class="callstoaction__graphic"></div>
-            <p class="callstoaction__click">click here</p>
-          </div>
-
-*/
-
-
-
-
-
-
 
 
 
@@ -226,17 +193,8 @@ li[class^="callstoaction"] a {
   width: 100%;
   position: absolute;
   top: 0;
-  opacity: 0.7;
-  background-color: #000;
   z-index: 10;
-  display: block;
 }
-
-.callstoaction__text, .callstoaction__graphic, .callstoaction__click{
-  position: relative;
-  text-align: center;
-  top: 25%;
-} /* this needs tweaking, also toggle opacity on rollover */
 
 .callstoaction__graphic {
   /*width: 21%; make 65 pixels until break point*/
@@ -247,6 +205,15 @@ li[class^="callstoaction"] a {
   width: 100%;
   max-width: 65px;
 }
+
+
+.callstoaction__text, .callstoaction__graphic, .callstoaction__click{
+  position: relative;
+  text-align: center;
+  top: 25%;
+} /* this needs tweaking, also toggle opacity on rollover */
+
+
 
 
 .carousel__indicator__container {
@@ -394,9 +361,8 @@ body {
   background-color: #fff;
 }
 
-#nav__list li:hover, button:hover {
-  background-color: #fff; /* opacity on rollover */
-}
+
+
 
 
 
@@ -479,7 +445,7 @@ p {
 }
 
 .social__contacts--tweet {
-  margin: 0 52px;
+  margin: 0 52px; /* make percentage on all margins? */
 }
 
 .social__contacts--tweet, footer p {
@@ -531,15 +497,8 @@ footer a {
 input[type=text] {
   margin-bottom: 0.4em;
   width: 100%;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+
 }
-
-/*button, label {
-  display: block;
-}*/
-
-
 
 .social__contacts button {
   -webkit-appearance: none;
@@ -555,6 +514,7 @@ input[type=text] {
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase;
 }
+
 
 
 .social__contacts fieldset {
@@ -606,11 +566,59 @@ input[type=text] {
 
 /* ====    INTERACTION   ==== */
 
-
-#social__contacts--signup button {
-  margin-bottom: 0;
+#nav__list li, li[class^="header__social--links"], .social__contacts button {
+  background-color: transparent;
+  -webkit-transition: background .1s ease-in;
+  -moz-transition: background .1s ease-in;
+  -o-transition: background .1s ease-in;
+  transition: background .1s ease-in;
 }
 
+#nav__list li:hover, li[class^="header__social--links"]:hover, .social__contacts button:hover {
+  background-color: rgb(75,90,98); /* rgb for IE8 */
+  background-color: rgba(255,255,255,0.3); /* opacity on rollover */
+  -webkit-transition: background .1s ease-in;
+  -moz-transition: background .1s ease-in;
+  -o-transition: background .1s ease-in;
+  transition: background .1s ease-in;
+}
+
+
+
+
+
+.callstoaction__overlay {
+  background-color: rgba(0,0,0,0);
+  -webkit-transition: background-color .1s ease-in;
+  -moz-transition: background-color .1s ease-in;
+  -o-transition: background-color .1s ease-in;
+  transition: background-color .1s ease-in;
+}
+
+.callstoaction__overlay:hover {
+  background-color: rgba(0,0,0,0.3);
+  -webkit-transition: background-color .1s ease-in;
+  -moz-transition: background-color .1s ease-in;
+  -o-transition: background-color .1s ease-in;
+  transition: background-color .1s ease-in;
+}
+
+.callstoaction__overlay [class^="callstoaction__"] {
+  visibility: hidden;
+  -webkit-transition: display .1s ease-in;
+  -moz-transition: display .1s ease-in;
+  -o-transition: display .1s ease-in;
+  transition: display .1s ease-in;
+}
+
+  
+.callstoaction__overlay:hover [class^="callstoaction__"] {
+  visibility: visible;
+  -webkit-transition: display .1s ease-in;
+  -moz-transition: display .1s ease-in;
+  -o-transition: display .1s ease-in;
+  transition: display .1s ease-in;
+}
 
 
 
@@ -776,6 +784,15 @@ span[class^="footer__social--links"] a {
 
 
 
+
+.social__contacts label[for="signup--birthday"] {
+  width: 35%;
+  margin-right: 0;
+}
+
+/*fix birhtday */
+
+
 } /*end of media query max-width 78.75rem */
 
 
@@ -787,15 +804,55 @@ span[class^="footer__social--links"] a {
 
 
 
-/* -->>> LESS THAN 1000px <<<-- */
+/* -->>> LESS THAN 1100px <<<-- */
+/*was 1000 = 62.5*/
 
-@media only screen and (max-width: 62.5rem), only screen and (max-device-width: 62.5rem) {
-
-
-
+@media only screen and (max-width: 68.75rem), only screen and (max-device-width: 68.75rem) {
 
 
-} /*end of media query max-width 62.5rem */
+#header__landing-background, #header__landing-background::after {
+    height: 918px;
+}
+
+#header__logo {
+    margin-top: 100px;
+}
+
+#nav__list li {
+  width: 8em;
+}
+
+.social__contacts {
+  text-align: center;
+}
+
+.social__contacts > div {
+  width: 31%; /* 400px at full width */
+  margin: 0 1.5%; /* 10px at full width  
+  FIX LR MARGINS ON CONTAINER, float none, inline block doesn't work */
+}
+
+.social__contacts label[for="signup--"] {
+  width: 28%;
+}
+
+.social__contacts fieldset {
+  margin: 0 0 14px 0;
+}
+
+.social__contacts select[id^="signup--birthday"] {
+  margin-left: 10px;
+}
+
+.social__contacts--text {
+  margin: 0 10px 40px 10px; /* changed from 52px because heavier font wrapped to 3 lines */
+}
+
+.social__contacts--tweet {
+  margin: 0 10px; /* make percentage on all margins? */
+}
+
+} /*end of media query max-width 68.75rem */
 
 
 
