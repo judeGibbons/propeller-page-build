@@ -91,6 +91,8 @@ table {
   margin-bottom: 57px;
 }
 
+
+
 .header__social--links {
   width: 190px;
   height: 40px;
@@ -98,6 +100,13 @@ table {
   text-align: center;
   margin: 0 auto 130px auto;
 }
+
+
+.header__social--links ul {
+  display: inline-block;
+}
+
+
 
 #introduction {
   margin: 0 auto;
@@ -147,8 +156,10 @@ display: inline-block;
 
 #nav__list li {
   float: left;
-  width: 190px;
-  margin: 18px 10px;
+  /*width: 190px;
+  margin: 18px 10px;*/
+  width: 11.875rem;
+  margin: 18px 0.625rem;
 }
 
 #nav__list li:first-child {
@@ -741,35 +752,50 @@ span[class^="footer__social--links"] a {
 
 
 
-
 /* -->>> LESS THAN 1260px, width of main container <<<-- */
 
-@media only screen and (max-width: 91.25em), only screen and (max-device-width: 91.25em) {
+@media only screen and (max-width: 78.75rem), only screen and (max-device-width: 78.75rem) {
+
+#nav__list li {
+  display: inline-block;
+  float: none;
+  /*width: 11.875rem;
+  margin: 18px 0.625rem;*/
+  width: 10em;
+  margin: 14px 0.625em; /*want to collapse margins? */
+  text-align: center;
+}
+
+#nav__list li:first-child {
+  margin-left: 0.625rem;
+}
+
+#nav__list li:last-child {
+  margin-right: 0.625rem;
+}
+
+
+
+} /*end of media query max-width 78.75rem */
 
 
 
 
 
-} /*end of media query max-width 91.25em */
 
 
 
 
 
+/* -->>> LESS THAN 1000px <<<-- */
+
+@media only screen and (max-width: 62.5rem), only screen and (max-device-width: 62.5rem) {
 
 
 
 
 
-/* -->>> LESS THAN 30em <<<-- */
-
-@media only screen and (max-width: 30em), only screen and (max-device-width: 30em) {
-
-
-
-
-
-} /*end of media query max-width 30em */
+} /*end of media query max-width 62.5rem */
 
 
 
