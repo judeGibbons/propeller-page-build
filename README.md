@@ -2,7 +2,7 @@
 
 This is webpage built from a [layered Photoshop file provided](index.jpg).
 
-The current status is the basic page layout, including background images and type. I will be adding functionality such as a carousel and rollovers for some of the elements.
+The current status is the basic page layout, background images, type and rollover states for some of the elements. I will be adding a carousel with JavaScript functionality.
 
 The code is completely handwritten with no use of libraries, frameworks or preprocessors. I have tried to use a BEM-style naming convention.
 
