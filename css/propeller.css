@@ -1,10 +1,8 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-
+/* ========================== */
 /* ====      RESET       ==== */
+/* ========================== */
+
+/* http://meyerweb.com/eric/tools/css/reset/ - v2.0 | 20110126 - License: none (public domain) */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -37,7 +35,6 @@ body {
 ol, ul {
   list-style: none;
 }
-
 /*chrome user stylesheet*/
 ul, menu, dir {
     display: block;
@@ -47,7 +44,6 @@ ul, menu, dir {
     -webkit-margin-end: 0px;
     -webkit-padding-start: 0px;
 }
-
 blockquote, q {
   quotes: none;
 }
@@ -60,13 +56,26 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+/* ========================== */
 /* ====   END OF RESET   ==== */
+/* ========================== */
 
 
 
 
+
+/* ========================== */
 /* ====    MAIN LAYOUT   ==== */
+/* ========================== */
+
+body {
+  background-color: #000;
+  font-family: "Volkhov", "Palatino", serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-style: italic;
+}
 
 .container {
   position: relative;
@@ -74,67 +83,6 @@ table {
   padding: 0 10px;
   max-width: 77.5rem; /* full width is 1240px */
 }
-
-#header {
-  position: relative;
-}
-
-#header__logo {
-  margin-top: 142px;
-  margin-bottom: 52px;
-}
-
-
-#nav__list {
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  margin-bottom: 57px;
-}
-
-
-
-.header__social--links {
-  width: 190px;
-  height: 40px;
-  position: relative;
-  text-align: center;
-  margin: 0 auto 130px auto;
-}
-
-
-.header__social--links ul {
-  display: inline-block;
-}
-
-
-
-#introduction {
-  margin: 0 auto;
-  padding: 72px 25.4%; /* h padding 315px at full width */
-}
-
-
-
-#carousel {
-  height: 490px;
-  background-color: orange;
-  position: relative;
-  overflow: hidden;
-}
-
-.social__contacts {
-  margin-top: 42px;
-  height: 332px;
-  padding-bottom: 68px;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 2px;
-}
-
-footer {
-  position: relative;
-  min-height: 155px; /* fix at smaller sizes, force pic to stick to btm of viewport; */
-}
-
 
 .clearfix:after {
   content: " ";
@@ -145,479 +93,7 @@ footer {
   visibility: hidden;
 }
 
-
-
-/* === BLOCK LEVEL LAYOUT === */
-
-
-#nav__list li {
-  float: left;
-  /*width: 190px;
-  margin: 18px 10px;*/
-  width: 11.875rem;
-  margin: 18px 0.625rem;
-  border-radius: 4px;
-}
-
-#nav__list li:first-child {
-  margin-left: 0;
-}
-
-#nav__list li:last-child {
-  margin-right: 0;
-}
-
-#callstoaction > div {
-  width: 25%;
-  height: 0;
-  padding-bottom: 25%;
-  float: left;
-  position: relative;
-}
-
-#callstoaction > div img {
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  display: block;
-}
-
-
-
-
-
-.callstoaction__overlay {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 10;
-}
-
-.callstoaction__graphic {
-  /*width: 21%; make 65 pixels until break point*/
-  margin: 20px auto;
-}
-
-.callstoaction__graphic img {
-  width: 100%;
-  max-width: 65px;
-}
-
-
-.callstoaction__text, .callstoaction__graphic, .callstoaction__click{
-  position: relative;
-  text-align: center;
-} /* this needs tweaking, also toggle opacity on rollover */
-
-
-
-
-.carousel__indicator__container {
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
-}
-
-.carousel__indicator {
-  display: inline-block;
-}
-
-
-.carousel__indicator--one {
-  -transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-}
-
-/*is this needed?*/
-li[class^="carousel__indicator"] a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-
-li[class^="carousel__slide"] {
-  /*width: 10px;
-  height: 10px; needs to be responsive */
-  float: left;
-}
-
-li[class^="carousel__slide"] img {
-  display: block;
-}
-
-li[class^="carousel__indicator"] {
-  width: 10px;
-  height: 10px;
-  margin-right: 10px; /* except when rotated? */
-  background-color: #fff;
-  float: left;
-}
-
-li[class^="carousel__indicator"]:last-child {
-  margin-right: 0;
-}
-
-div[id^="social__contacts--"] {
-  width: 32.258%; /* 400px at full width */
-  float: left;
-  position: relative;
-  margin: 0 0.80645%; /* 10px at full width */
-}
-
-div[id^="social__contacts--"]:first-child {
-  margin-left: 0;
-}
-
-div[id^="social__contacts--"]:last-child {
-  margin-right: 0;
-}
-
-
-
-
-
-
-.social__contacts--instagram--image {
-  width: 48.75%;
-  height: 0;
-  padding-bottom: 48.75%;
-  float: left;
-  display: block;
-  position: relative;
-  margin-right: 2.5%;
-}
-
-.social__contacts--instagram--image:last-child {
-  margin-right: 0;
-}
-
-.social__contacts--instagram--image img {
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  display: block;
-}
-
-
-
-
-footer p {
-  padding-top: 32px;
-  border-top: 1px solid #fff;
-}
-
-
-
-li[class^="header__social--links"], span[class^="footer__social--links"] {
-  display: inline-block;
-  position: relative;
-}
-
-li[class^="header__social--links"] {
-  float: left;
-  margin-right: 30px;
-  width: 36px;
-  height: 36px;
-  border: 2px solid #fff;
-  border-radius: 20px;
-}
-
-li[class^="header__social--links"] a {
-  display: block;
-  width: 36px;
-  height: 36px;
-}
-
-span[class^="footer__social--links--"] {
-  top: 2px;
-  margin-right: 20px;
-}
-
-li[class^="header__social--links"]:last-child, span[class^="footer__social--links"]:last-child {
-  margin-right: 0;
-}
-
-span[class^="footer__social--links"] .a11y {
-  position: absolute;
-  left: -9999px;
-}
-
-/* ====      DESIGN      ==== */
-
-body {
-  background-color: #000;
-}
-
-#introduction {
-  background-color: #fff;
-}
-
-
-
-
-
-
-
-/* ====       TYPE       ==== */
-
-body {
-  font-family: "Volkhov", "Palatino", serif;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6, #nav__list li {
-  font-family: "Montserrat", "Arial", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-#nav__list a, footer a {
-  text-decoration: none;
-}
-
-
-h1 {
-  color: #000;
-}
-
-p {
-    font-style: italic;
-    margin-bottom: 0.4rem;
-}
-
-#introduction h1 {
-  font-size: 2.5rem;
-  line-height: 1.125;
-}
-
-#introduction p {
-  margin-top: 28px;
-  line-height: 1.3888;
-}
-
-
-#nav__list li {
-  font-weight: normal;
-  font-size: 1.125rem;
-}
-
-#nav__list li a {
-  color: #fff;
-  font-weight: normal;
-}
-
-#callstoaction {
-  color: #fff;
-}
-
-.callstoaction__text {
-  font-size: 1.125rem;
-  font-weight: normal;
-  margin-top: 25%;
-}
-
-
-
-.social__contacts {
-  color: #fff;
-}
-
-div[id^="social__contacts--"] h2 {
-  font-weight: normal;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 22px;
-}
-
-
-.social__contacts--text {
-  margin: 0 40px 40px 40px; /* changed from 52px because heavier font wrapped to 3 lines */
-}
-
-.social__contacts--tweet {
-  margin: 0 52px; /* make percentage on all margins? */
-}
-
-.social__contacts--tweet, footer p {
-  font-size: 0.9375rem;
-  line-height: 1.4375; /* 15/23 but doesn't look like it; divide by rems = 1.5333, still not quite right*/ 
-}
-
-.social__contacts--tweet {
-  text-align: left;
-}
-
-.social__contacts--twitter-timestamp {
-  display: block;
-  text-align: right;
-}
-
-footer p {
-  font-family: "Montserrat", "Arial", "sans-serif";
-  font-weight: normal;
-  font-style: normal;
-  color: #fff;
-}
-
-footer a {
-  color: #fff;
-}
-
-
-.footer__contact::after {
-  content: "|";
-  margin: 0 20px;
-}
-
-
-.title, .em {
-  font-style: italic;
-}
-
-.strong {
-  font-style: bold;
-}
-
-
-
-
-
-/* ====   FORM ELEMENTS  ==== */
-
-input[type=text] {
-  margin-bottom: 0.4em;
-  width: 100%;
-
-}
-
-.social__contacts button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: transparent;
-  margin: 10px auto 16px auto;
-  border: 1px solid #fff;
-  width: 190px;
-  height: 35px;
-  border-radius: 4px;
-  font-size: 0.9375rem;
-  color: #fff;
-  font-family: "Montserrat", "Arial", sans-serif;
-  text-transform: uppercase;
-}
-
-
-
-.social__contacts fieldset {
-  margin: 0 52px 14px 52px;
-  border: 1px solid #fff;
-  text-align: left;
-}
-
-
-.social__contacts input[type="text"], .social__contacts label {
-  display: inline-block;
-}
-
-.social__contacts input[type="text"] {
-  width: 60%;
-  background-color: transparent;
-  border: 0;
-  font-size: 1em;
-  font-family: "Volkhov", "Palatino", serif;
-  color: #fff;
-}
-
-.social__contacts label {
-  width: 26%;
-  margin: 9px 2% 9px 4%;
-  border-right: 1px solid #fff;
-  line-height: 1rem;
-  font-style: italic;
-}
-
-
-#signup--birthday--day, #signup--birthday--month {
-  background-color: transparent;
-  border: 0;
-  color: #fff;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-/*
-#signup--birthday--day option, #signup--birthday--day option {
-  font-size: 11px;
-}
-
-#signup--birthday--day option:first-child, #signup--birthday--day option:first-child {
-  font-size: 18pt;
-}
-*/
-
-/* ====    INTERACTION   ==== */
-
-#nav__list li, li[class^="header__social--links"], .social__contacts button {
-  background-color: transparent;
-  -webkit-transition: background .1s ease-in;
-  -moz-transition: background .1s ease-in;
-  -o-transition: background .1s ease-in;
-  transition: background .1s ease-in;
-}
-
-#nav__list li:hover, li[class^="header__social--links"]:hover, .social__contacts button:hover {
-  background-color: rgb(75,90,98); /* rgb for IE8 */
-  background-color: rgba(255,255,255,0.3); /* opacity on rollover */
-  -webkit-transition: background .1s ease-in;
-  -moz-transition: background .1s ease-in;
-  -o-transition: background .1s ease-in;
-  transition: background .1s ease-in;
-}
-
-
-
-
-
-.callstoaction__overlay {
-  background-color: rgba(0,0,0,0);
-  -webkit-transition: background-color .1s ease-in;
-  -moz-transition: background-color .1s ease-in;
-  -o-transition: background-color .1s ease-in;
-  transition: background-color .1s ease-in;
-}
-
-.callstoaction__overlay:hover {
-  background-color: rgba(0,0,0,0.3);
-  -webkit-transition: background-color .1s ease-in;
-  -moz-transition: background-color .1s ease-in;
-  -o-transition: background-color .1s ease-in;
-  transition: background-color .1s ease-in;
-}
-
-.callstoaction__overlay [class^="callstoaction__"] {
-  visibility: hidden;
-  -webkit-transition: display .1s ease-in;
-  -moz-transition: display .1s ease-in;
-  -o-transition: display .1s ease-in;
-  transition: display .1s ease-in;
-}
-
-  
-.callstoaction__overlay:hover [class^="callstoaction__"] {
-  visibility: visible;
-  -webkit-transition: display .1s ease-in;
-  -moz-transition: display .1s ease-in;
-  -o-transition: display .1s ease-in;
-  transition: display .1s ease-in;
-}
-
-
-
-/* ====      IMAGES      ==== */
+/* ==== BACKGROUND IMAGES ==== */
 
 #header__landing-background, #header__landing-background::after {
   width: 100%;
@@ -657,6 +133,119 @@ input[type=text] {
   left: 0;
 }
 
+/* ====       TYPE       ==== */
+
+h1, h2, h3, h4, h5, h6, #nav__list li {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+#nav__list a, footer a {
+  text-decoration: none;
+}
+
+h1 {
+  color: #000;
+}
+
+.title, .em {
+  font-style: italic;
+}
+
+.strong {
+  font-style: bold;
+}
+
+
+
+/* ========================== */
+/* ====      HEADER      ==== */
+/* ========================== */
+
+
+#header {
+  position: relative;
+}
+
+#header__logo {
+  margin-top: 158px;
+  margin-bottom: 56px;
+}
+
+
+
+/* ====   NAVIGATION    ==== */
+
+
+#nav__list {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 57px;
+}
+
+#nav__list li {
+  float: left;
+  font-weight: normal;
+  font-size: 1.125rem;
+  width: 11.875rem;
+  margin: 18px 0.625rem;
+  border-radius: 4px;
+  font-style: normal;
+}
+
+#nav__list li:first-child {
+  margin-left: 0;
+}
+
+#nav__list li:last-child {
+  margin-right: 0;
+}
+
+#nav__list li a {
+  color: #fff;
+  font-weight: normal;
+}
+
+/* ====   SOCIAL LINKS  ==== */
+
+.header__social--links {
+  width: 190px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto 128px auto;
+}
+
+.header__social--links ul {
+  display: inline-block;
+}
+
+li[class^="header__social--links"], span[class^="footer__social--links"] {
+  display: inline-block;
+  position: relative;
+}
+
+li[class^="header__social--links"] {
+  float: left;
+  margin-right: 30px;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+
+li[class^="header__social--links"]:last-child {
+  margin-right: 0;
+}
+
+li[class^="header__social--links"] a {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
 li[class^="header__social--links"] img {
   position: relative;
 }
@@ -674,23 +263,392 @@ li.header__social--links--instagram img {
 }
 
 
-.callstoaction__graphic {
-  width: 65px;
-  height: 64px;
-  background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -35px -20px;
+/* ====    INTERACTION   ==== */
+
+#nav__list li, li[class^="header__social--links"], .social__contacts button {
+  background-color: transparent;
+  -webkit-transition: background .1s ease-in;
+  -moz-transition: background .1s ease-in;
+  -o-transition: background .1s ease-in;
+  transition: background .1s ease-in;
 }
+
+#nav__list li:hover, li[class^="header__social--links"]:hover, .social__contacts button:hover {
+  background-color: rgb(75,90,98); /* rgb for IE8 */
+  background-color: rgba(255,255,255,0.3); /* opacity on rollover */
+  -webkit-transition: background .1s ease-in;
+  -moz-transition: background .1s ease-in;
+  -o-transition: background .1s ease-in;
+  transition: background .1s ease-in;
+}
+
+
+/* ========================== */
+/* ====   MAIN CONTENT   ==== */
+/* ========================== */
+
+
+/* ====   INTRODUCTION   ==== */
+
+#introduction {
+  margin: 0 auto;
+  padding: 70px 0 42px 0;
+  background-color: #fff;
+}
+
+#introduction h1 {
+  font-size: 2.5rem;
+  line-height: 1.125;
+  margin: 0 25%;
+}
+
+#introduction p {
+  margin: 16px 25% 0 25%;
+  line-height: 1.3888;
+}
+
+/* ====  CALLS TO ACTION ==== */
+
+#callstoaction {
+  color: #fff;
+}
+#callstoaction > div {
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
+  float: left;
+  position: relative;
+}
+
+#callstoaction > div img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  display: block;
+}
+
 
 #callstoaction img {
   display: block;
 }
 
+.callstoaction__overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.callstoaction__graphic {
+  width: 65px;
+  height: 64px;
+  background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -35px -20px;
+  margin: 20px auto;
+}
+
+.callstoaction__graphic img {
+  width: 100%;
+  max-width: 65px;
+}
+
+.callstoaction__text, .callstoaction__graphic, .callstoaction__click{
+  position: relative;
+  text-align: center;
+}
+
+.callstoaction__text {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-top: 25%;
+}
+
+
+
+
+/* ====    INTERACTION   ==== */
+
+.callstoaction__overlay {
+  background-color: rgba(0,0,0,0);
+  -webkit-transition: background-color .1s ease-in;
+  -moz-transition: background-color .1s ease-in;
+  -o-transition: background-color .1s ease-in;
+  transition: background-color .1s ease-in;
+}
+
+.callstoaction__overlay:hover {
+  background-color: rgba(0,0,0,0.7);
+  -webkit-transition: background-color .1s ease-in;
+  -moz-transition: background-color .1s ease-in;
+  -o-transition: background-color .1s ease-in;
+  transition: background-color .1s ease-in;
+}
+
+.callstoaction__overlay [class^="callstoaction__"] {
+  visibility: hidden;
+  -webkit-transition: display .1s ease-in;
+  -moz-transition: display .1s ease-in;
+  -o-transition: display .1s ease-in;
+  transition: display .1s ease-in;
+}
+  
+.callstoaction__overlay:hover [class^="callstoaction__"] {
+  visibility: visible;
+  -webkit-transition: display .1s ease-in;
+  -moz-transition: display .1s ease-in;
+  -o-transition: display .1s ease-in;
+  transition: display .1s ease-in;
+}
+
+
+/* ====     CAROUSEL     ==== */
+
+#carousel {
+  height: 490px;
+  background-color: orange;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__indicator__container {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+}
+
+.carousel__indicator {
+  display: inline-block;
+}
+
+.carousel__indicator--one {
+  -transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+
+/*is this needed?*/
+li[class^="carousel__indicator"] a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+li[class^="carousel__slide"] {
+  /*width: 10px;
+  height: 10px; needs to be responsive */
+  float: left;
+}
+
+li[class^="carousel__slide"] img {
+  display: block;
+}
+
+li[class^="carousel__indicator"] {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px; /* except when rotated? */
+  background-color: #fff;
+  float: left;
+}
+
+li[class^="carousel__indicator"]:last-child {
+  margin-right: 0;
+}
+
+
+
+/* ========================== */
+/* ====  SOCIAL CONTACTS ==== */
+/* ========================== */
+
+
+.social__contacts {
+  margin-top: 42px;
+  height: 332px;
+  padding-bottom: 68px;
+  color: #fff;
+}
+
+div[id^="social__contacts--"] {
+  width: 32.258%; /* 400px at full width */
+  float: left;
+  position: relative;
+  margin: 0 0.80645%; /* 10px at full width */
+}
+
+div[id^="social__contacts--"] h2 {
+  font-weight: normal;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 16px;
+}
+
+div[id^="social__contacts--"]:first-child {
+  margin-left: 0;
+}
+
+div[id^="social__contacts--"]:last-child {
+  margin-right: 0;
+}
+
+.social__contacts--instagram--image {
+  width: 48.75%;
+  height: 0;
+  padding-bottom: 48.75%;
+  float: left;
+  display: block;
+  position: relative;
+  margin-right: 2.5%;
+}
+
+.social__contacts--instagram--image:last-child {
+  margin-right: 0;
+}
+
+.social__contacts--instagram--image img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  display: block;
+}
+
+.social__contacts--text {
+  margin: 0 40px 40px 40px; /* changed from 52px because heavier font wrapped to 3 lines */
+}
+
+.social__contacts--tweet {
+  margin: 0 52px; /* make percentage on all margins? */
+  text-align: left;
+  }
+
+.social__contacts--tweet {
+  font-size: 0.9375rem;
+  line-height: 1.4375; 
+}
+
+.social__contacts--twitter-timestamp {
+  display: block;
+  text-align: right;
+}
+
+/* ====      FORM      ==== */
+
+input[type=text] {
+  margin-bottom: 0.4em;
+  width: 100%;
+
+}
+
+.social__contacts button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  margin: 10px auto 26px auto;
+  border: 1px solid #fff;
+  width: 190px;
+  height: 35px;
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  color: #fff;
+  font-family: "Montserrat", "Arial", sans-serif;
+  text-transform: uppercase;
+}
+
+.social__contacts fieldset {
+  margin: 0 52px 14px 52px;
+  border: 1px solid #fff;
+  text-align: left;
+}
+
+.social__contacts input[type="text"], .social__contacts label {
+  display: inline-block;
+}
+
+.social__contacts input[type="text"] {
+  width: 60%;
+  background-color: transparent;
+  border: 0;
+  font-size: 1em;
+  font-family: "Volkhov", "Palatino", serif;
+  color: #fff;
+}
+
+.social__contacts label {
+  width: 26%;
+  margin: 9px 2% 9px 4%;
+  border-right: 1px solid #fff;
+  line-height: 1rem;
+  font-style: italic;
+}
+
+#signup--birthday--day, #signup--birthday--month {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/*
+#signup--birthday--day option, #signup--birthday--day option {
+  font-size: 11px;
+}
+
+#signup--birthday--day option:first-child, #signup--birthday--day option:first-child {
+  font-size: 18pt;
+}
+*/
+
+
+
+/* ========================== */
+/* ====      FOOTER      ==== */
+/* ========================== */
+
+footer {
+  position: relative;
+  clear: both;
+}
+
+footer p {
+  font-family: "Montserrat", "Arial", "sans-serif";
+  font-weight: normal;
+  font-style: normal;
+  color: #fff;
+  padding-top: 32px;
+  border-top: 4px double #fff;
+  font-size: 0.9375rem;
+  line-height: 1.4375; 
+}
+
+footer a {
+  color: #fff;
+}
+
+span[class^="footer__social--links--"] {
+  top: 2px;
+  margin-right: 20px;
+}
+
+span[class^="footer__social--links"]:last-child {
+  margin-right: 0;
+}
+
+span[class^="footer__social--links"] .a11y {
+  position: absolute;
+  left: -9999px;
+}
+
+.footer__contact::after {
+  content: "|";
+  margin: 0 20px;
+}
 
 span[class^="footer__social--links"] a {
   background-image: url("../graphics/sprite-logos-graphics-100x84.png");
   background-repeat: no-repeat;
   display: inline-block;
 }
-
 
 .footer__social--links--facebook a {
   width: 8px;
@@ -702,7 +660,6 @@ span[class^="footer__social--links"] a {
   background-position: -42px -6px;
 }
 
-
 .footer__social--links--twitter a {
   width: 14px;
   height: 11px;
@@ -712,7 +669,6 @@ span[class^="footer__social--links"] a {
 .footer__social--links--twitter a:hover {
   background-position: -21px -0px;
 }
-
 
 .footer__social--links--instagram a {
   width: 14px;
@@ -725,6 +681,7 @@ span[class^="footer__social--links"] a {
 }
 
 #propeller__icon {
+  padding-bottom: 30px;
   width: 25px;
   height: 36px;
   margin: 36px auto 0 auto;
@@ -732,15 +689,14 @@ span[class^="footer__social--links"] a {
 }
 
 
-
-
-
+/* ========================== */
 /* ====   MEDIAQUERIES   ==== */
+/* ========================== */
 
 
 /* -->>> MORE THAN 2000px, width of bg pic <<<-- */
 /* to expand background pictures when container is more than the width of the picture */
-@media only screen and (min-width: 125em), only screen and (min-device-width: 125em) {
+@media only screen and (min-width: 125rem), only screen and (min-device-width: 125rem) {
 
 #header__landing-background, #footer__home-background {
     -webkit-background-size: cover;
@@ -748,9 +704,7 @@ span[class^="footer__social--links"] a {
     -o-background-size: cover;
     background-size: cover;
   }
-} /*end of media query min-width 125em */
-
-
+} /*end of media query min-width 2000px */
 
 
 
@@ -759,16 +713,14 @@ span[class^="footer__social--links"] a {
 
 @media only screen and (max-width: 78.75rem), only screen and (max-device-width: 78.75rem) {
 
+
 .container {
   padding: 0;
-  /* was 10px */
 }
 
 #nav__list li {
   display: inline-block;
   float: none;
-  /*width: 11.875rem;
-  margin: 18px 0.625rem;*/
   width: 10em;
   margin: 14px 0.625em; /*want to collapse margins? */
   text-align: center;
@@ -782,30 +734,16 @@ span[class^="footer__social--links"] a {
   margin-right: 0.625rem;
 }
 
-
-
-
 .social__contacts label[for="signup--birthday"] {
   width: 35%;
   margin-right: 0;
 }
 
-/*fix birhtday */
-
-
-} /*end of media query max-width 78.75rem */
-
-
-
-
-
-
-
+} /*end of media query max-width 1260px */
 
 
 
 /* -->>> LESS THAN 1100px <<<-- */
-/*was 1000 = 62.5*/
 
 @media only screen and (max-width: 68.75rem), only screen and (max-device-width: 68.75rem) {
 
@@ -818,10 +756,6 @@ span[class^="footer__social--links"] a {
     margin-top: 80px;
 }
 
-#introduction {
-    padding: 40px 15%;
-}
-
 #nav__list li {
   width: 8em;
 }
@@ -829,6 +763,8 @@ span[class^="footer__social--links"] a {
 .callstoaction__text {
   margin-top: 20%;
 }
+
+
 
 .social__contacts {
   text-align: center;
@@ -860,7 +796,10 @@ div[id^="social__contacts--"] {
   margin: 0 10px; /* make percentage on all margins? */
 }
 
-} /*end of media query max-width 68.75rem */
+} /*end of media query max-width 1100px */
+
+
+
 
 
 /* -->>> LESS THAN 900px <<<-- */
@@ -871,7 +810,8 @@ div[id^="social__contacts--"] {
   margin-top: 15%;
 }
 
-} /*end of media query max-width 56.25rem */
+} /*end of media query max-width 900px */
+
 
 
 
@@ -889,10 +829,15 @@ div[id^="social__contacts--"] {
   height: 618px;
 }
 
+#introduction h1 {
+  margin: 0 15%;
+}
 
+#introduction p {
+  margin: 16px 15% 0 15%;
+}
 
-
-} /*end of media query max-width 51rem */
+} /*end of media query max-width 816px */
 
 
 
@@ -910,14 +855,12 @@ div[id^="social__contacts--"] {
   height: 618px;
 }
 
-
 #header__logo {
-  margin: 7% 0 52px 7%;
+  margin: 7% 0 7% 7%;
   position: relative;
   text-align: left;
   width: 50%;
 }
-
 
 #header__logo img {
     width: 100%;
@@ -932,16 +875,9 @@ div[id^="social__contacts--"] {
   width: 40px;
 }
 
-
 li[class^="header__social--links"] {
   margin-right: 0;
   margin-bottom: 20px;
-}
-
-
-#callstoaction > div {
-  padding-bottom: 50%;
-  width: 50%;
 }
 
 
@@ -949,7 +885,7 @@ li[class^="header__social--links"] {
 #nav__list {
   border: 1px solid #fff;
   height: 40px;
-  margin: 0 30px 0 0;
+  margin: 0 7% 0 0;
   overflow: hidden;
   position: absolute;
   right: 0;
@@ -962,7 +898,22 @@ li[class^="header__social--links"] {
   font-family: "Montserrat", "Arial", sans-serif;
   color: #fff;
   text-transform: uppercase;
-} /*end of media query max-width 35rem */
+}
+
+
+#introduction h1 {
+  margin: 0 5%;
+}
+
+#introduction p {
+  margin: 16px 5% 0 5%;
+}
+
+
+#callstoaction > div {
+  padding-bottom: 50%;
+  width: 50%;
+}
 
 
 .social__contacts {
@@ -996,45 +947,153 @@ p.social__contacts__handle {
   top: 10px;
 }
 
-
-
-
-footer p {
-    border-top: 1px solid #fff;
-    padding-top: 32px;
+.social__contacts--text {
+    margin: 10px 10px 20px 10px;
 }
 
 
-
   
-} /*end of media query max-width 35rem */
-
-/* ==== for testing ==== 
+} /*end of media query max-width 560px */
 
 
-NOTES
+/* ========================== */
+/* ====   TEMP FOR DEV   ==== */
+/* ========================== */
+body::before {
+  font-size: 0.8rem;
+  height: 1rem;
+  color: #fff;
+  font-style: normal;
+  line-height: 1rem;
+  display: block;
+  content:'max width 2000px, min width 1260px';
+  background-color: green;
+}
 
-2000/1260/1000
+@media only screen and (min-width: 125rem), only screen and (min-device-width: 125rem) {
+body::before {
+  content:'temp - min width 2000px, 125rem';
+  background-color: red;
+}
+}
+@media only screen and (max-width: 78.75rem), only screen and (max-device-width: 78.75rem) {
+body::before {
+  content:'temp - max width 1260px, 78.75rem';
+  background-color: orange;
+}
+}
+@media only screen and (max-width: 68.75rem), only screen and (max-device-width: 68.75rem) {
+body::before {
+  content:'temp - max width 1100px, 68.75rem';
+  background-color: blue;
+}
+}
+@media only screen and (max-width: 56.25rem), only screen and (max-device-width: 56.25em) {
+body::before {
+  content:'temp - max width 900px, 56.25rem';
+  background-color: purple;
+}
+}
+@media only screen and (max-width: 51rem), only screen and (max-device-width: 51rem) {
+body::before {
+  content:'temp - max width 816px, 51rem';
+  background-color: teal;
+}
+}
+@media only screen and (max-width: 35rem), only screen and (max-device-width: 35rem) {
+body::before {
+  content:'temp - max width 560px, 35rem';
+  background-color: green;
+}
+}
+/* ========================== */
+/* == END OF TEMP FOR DEV === */
+/* ========================== */
 
+
+
+/* ==== TO DO ==== 
+
+RESPONSIVE LAYOUT
+
+- nav and social icons - sort out layout at end break 
+check on phones and ipad - all different
+
+- calls to action:;
 .callstoaction__text, .callstoaction__graphic, .callstoaction__click 
-reduce 'top'
+reduce 'top' gradually
+comes a point where they no longer work - what then?
+hover doesn't work on mobile - display h2 permanently?
 
-social contacts, no margins [or < 1260?]
-remove height from social__contacts div
-form labels above inputs
+- check social contact blocks margins/padding:
+h2 don't line up with lhs of input fields;
+rhs of handles don't line up with rh margin
 
-ipad = c.788px
+- instagram pics - fix these
+
+- contact form:
+form labels above inputs before they go to full width?
+width of labels with right borders
+depth of form when narrow - is there a happy medium?
 
 
+FORM
+- labels or legends? are dd and mm labels, others legends?
+- dropdowns, don't style these, on IE, text is white on white bg
+- would be better with fields? 31 too long, names of months make more sense
+- also should have validation so that you can't enter, eg. 31 February
+
+
+CAROUSEL
+- build it responsively
+- fade or move? - fade i think
+- do i need 
+- indicator rotates when picture changes
+- use no-js class on body to make nav show on load
+
+
+IMAGES
+- make all social icons content - remove from sprite
+- redo all sprite images - put 1px margin round all of them - reset in css
+- social icons in footer - make content, put rollover like with nav ones
+
+
+ACCESSIBILITY
+- hover/focus state on links, social icons
+
+
+TEST
+- zooming out - check with rems (make breakpoints ems??)
+- with no js
+- IE, safari, phones
+
+need fallback etc for:
+box-sizing
+:hover used on li
+using html5 containers
+:after or ::after
+child > selector
+first-child/last child selector
+border radius
+
+
+
+
+
+/* ==== NOTES ==== 
 
 Beware of Safari not supporting background-size shorthand!
-
-
-
+ipad = c.788px
 Mobile first vs mobile last
-
 Vendor prefixes
+carousel autoplay bad
+sources - landshape, googling stackoverflow, css-tricks, mdn
+not using responsive images (scrset or picture)
+social icons are semantic content
+social links - done differently in header and footer - could make both the same (list) and pull in with php include
+don't like 'click here'
+home bg pic - have used one that is already blurred and desaturated rather than use css filters
+percentage rounding errors - modern browsers use pixel fudging
+accessibility - aria roles
 
-
-
-/* ==== end of testing ==== */
+ ==== */
