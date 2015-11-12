@@ -51,8 +51,8 @@ ul, menu, dir {
 blockquote, q {
   quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote::before, blockquote::after,
+q::before, q::after {
   content: '';
   content: none;
 }
@@ -126,6 +126,8 @@ table {
   margin-top: 42px;
   height: 332px;
   padding-bottom: 68px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 2px;
 }
 
 footer {
@@ -144,11 +146,6 @@ footer {
 }
 
 
-
-.xxxxxxxxxx {
-display: inline-block;
-
-}
 
 /* === BLOCK LEVEL LAYOUT === */
 
@@ -263,25 +260,22 @@ li[class^="carousel__indicator"]:last-child {
   margin-right: 0;
 }
 
-.social__contacts div[id^="social__contacts--"] {
+div[id^="social__contacts--"] {
   width: 32.258%; /* 400px at full width */
   float: left;
   position: relative;
   margin: 0 0.80645%; /* 10px at full width */
 }
 
-.social__contacts  div[id^="social__contacts--"]:first-child {
+div[id^="social__contacts--"]:first-child {
   margin-left: 0;
 }
 
-.social__contacts  div[id^="social__contacts--"]:last-child {
+div[id^="social__contacts--"]:last-child {
   margin-right: 0;
 }
 
-.social__contacts {
-  border-bottom: 1px solid #fff;
-  margin-bottom: 2px;
-}
+
 
 
 
@@ -433,7 +427,7 @@ p {
   color: #fff;
 }
 
-.social__contacts h2 {
+div[id^="social__contacts--"] h2 {
   font-weight: normal;
   padding-bottom: 16px;
   border-bottom: 1px solid #fff;
@@ -840,7 +834,7 @@ span[class^="footer__social--links"] a {
   text-align: center;
 }
 
-.social__contacts div[id^="social__contacts--"] {
+div[id^="social__contacts--"] {
   width: 31%; /* 400px at full width */
   margin: 0 1.5%; /* 10px at full width  
   FIX LR MARGINS ON CONTAINER, float none, inline block doesn't work */
@@ -881,19 +875,139 @@ span[class^="footer__social--links"] a {
 
 
 
-/* -->>> LESS THAN 800px <<<-- */
+/* -->>> LESS THAN 816px <<<-- */
 
-@media only screen and (max-width: 50rem), only screen and (max-device-width: 50rem) {
-
-
-} /*end of media query max-width 50rem */
+@media only screen and (max-width: 51rem), only screen and (max-device-width: 51rem) {
 
 
+#header__landing-background {
+  background: rgba(0, 0, 0, 0) url("../graphics/landing-bg-top-q18-2000x960.jpg") no-repeat scroll center -300px;
+  height: 618px;
+}
+
+#header__landing-background::after {
+  height: 618px;
+}
 
 
 
 
+} /*end of media query max-width 51rem */
 
+
+
+/* -->>> LESS THAN 560px <<<-- */
+
+@media only screen and (max-width: 35rem), only screen and (max-device-width: 35rem) {
+
+
+#header__landing-background {
+  background: rgba(0, 0, 0, 0) url("../graphics/landing-bg-top-q18-2000x960.jpg") no-repeat scroll center -300px;
+  height: 618px;
+}
+
+#header__landing-background::after {
+  height: 618px;
+}
+
+
+#header__logo {
+  margin: 7% 0 52px 7%;
+  position: relative;
+  text-align: left;
+  width: 50%;
+}
+
+
+#header__logo img {
+    width: 100%;
+}
+
+.header__social--links {
+  height: 170px;
+  margin: 14% 7% 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+}
+
+
+li[class^="header__social--links"] {
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+
+#callstoaction > div {
+  padding-bottom: 50%;
+  width: 50%;
+}
+
+
+
+#nav__list {
+  border: 1px solid #fff;
+  height: 40px;
+  margin: 0 30px 0 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+}
+
+#nav__list::before {
+  content: 'menu';
+  font-family: "Montserrat", "Arial", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+} /*end of media query max-width 35rem */
+
+
+.social__contacts {
+  margin-top: 10px;
+  border-bottom: 0;
+}
+
+div[id^="social__contacts--"], div[id^="social__contacts--"]:first-child, div[id^="social__contacts--"]:last-child {
+  margin: 0;
+}
+
+div[id^="social__contacts--"] {
+  width: 97%;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+  padding: 10px 1.5% 20px 1.5% ;
+}
+
+div[id^="social__contacts--"] h2 {
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+  padding-left: 1.5%;
+  text-align: left;
+}
+
+p.social__contacts__handle {
+  margin-right: 1.5%;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+
+
+
+footer p {
+    border-top: 1px solid #fff;
+    padding-top: 32px;
+}
+
+
+
+  
+} /*end of media query max-width 35rem */
 
 /* ==== for testing ==== 
 
