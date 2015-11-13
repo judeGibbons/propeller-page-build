@@ -854,6 +854,7 @@ div[id^="social__contacts--"] {
 
 
 /* -->>> LESS THAN 560px <<<-- */
+/* ->> move to mobile view <<- */
 
 @media only screen and (max-width: 35rem), only screen and (max-device-width: 35rem) {
 
@@ -871,25 +872,27 @@ div[id^="social__contacts--"] {
   margin: 7% 0 7% 7%;
   position: relative;
   text-align: left;
-  width: 50%;
+  width: 56.5%; /* makes it high enough to force social icons to fit */
 }
 
 #header__logo img {
-    width: 100%;
+  width: 100%;
 }
 
 .header__social--links {
-  height: 170px;
-  margin: 14% 7% 0 0;
+  height: auto;
+  margin: 0 7% 0 0;
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
   width: 40px;
 }
 
 li[class^="header__social--links"] {
-  margin-right: 0;
-  margin-bottom: 20px;
+margin-right: 0;
+    /*margin-bottom: 20px;*/
+  margin-top: 35%;
+  bottom: 0;
 }
 
 
@@ -960,12 +963,52 @@ p.social__contacts__handle {
 }
 
 .social__contacts--text {
-    margin: 10px 10px 20px 10px;
+  margin: 10px 10px 20px 10px;
 }
 
-
-  
 } /*end of media query max-width 560px */
+
+
+
+
+
+/* -->>> LESS THAN 450px <<<-- */
+
+@media only screen and (max-width: 28.125rem), only screen and (max-device-width: 28.125rem) {
+
+#introduction {
+  padding-top: 50px;
+}
+
+#introduction h1 {
+  font-size: 2rem;
+}
+
+#introduction p {
+  font-size: 1rem;
+}
+
+} /*end of media query max-width 450px */
+
+
+
+
+
+
+/* -->>> LESS THAN 400px <<<-- */
+/* ->> move to mobile view <<- */
+
+@media only screen and (max-width: 25rem), only screen and (max-device-width: 25rem) {
+
+li[class^="header__social--links"] {
+  margin-top: 15%;
+}
+
+/*doesn't work for <350 eg iphone 4*/
+
+} /*end of media query max-width 400px */
+
+
 
 
 /* ========================== */
@@ -1018,6 +1061,42 @@ body::before {
   background-color: green;
 }
 }
+
+
+
+
+
+
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
+body::before {
+  content:'temp - max width 500px';
+  background-color: black;
+}
+}
+@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
+body::before {
+  content:'temp - max width 450px';
+  background-color: fuchsia;
+}
+}
+@media only screen and (max-width: 400px), only screen and (max-device-width: 400px) {
+body::before {
+  content:'temp - max width 400px';
+  background-color: black;
+}
+}
+@media only screen and (max-width: 350px), only screen and (max-device-width: 350px) {
+body::before {
+  content:'temp - max width 350px';
+  background-color: fuchsia;
+}
+}
+@media only screen and (max-width: 300px), only screen and (max-device-width: 300px) {
+body::before {
+  content:'temp - max width 300px';
+  background-color: black;
+}
+}
 /* ========================== */
 /* == END OF TEMP FOR DEV === */
 /* ========================== */
@@ -1028,12 +1107,19 @@ body::before {
 
 RESPONSIVE LAYOUT
 
--fix nav wrapping 1240 to 1275px - DONE
 
-- reduce size of bg pix?
 
 - nav and social icons - sort out layout at end break - try btm 0 for social
 check on phones and ipad - all different
+THIS DOESN'T WORK <400px - need more height?
+
+
+
+
+
+-fix nav wrapping 1240 to 1275px - DONE
+
+- reduce size of bg pix?
 
 - calls to action:;
 .callstoaction__text, .callstoaction__graphic, .callstoaction__click 
