@@ -186,13 +186,14 @@ h1 {
 }
 
 #nav__list li {
-  float: left;
+  display: inline-block;
   font-weight: normal;
   font-size: 1.125rem;
-  width: 11.875rem;
-  margin: 18px 0.625rem;
+  width: 15%;
+  margin: 18px 0.8%;
   border-radius: 4px;
   font-style: normal;
+  text-align: center;
 }
 
 #nav__list li:first-child {
@@ -719,19 +720,17 @@ span[class^="footer__social--links"] a {
 }
 
 #nav__list li {
-  display: inline-block;
-  float: none;
-  width: 10em;
-  margin: 14px 0.625em; /*want to collapse margins? */
-  text-align: center;
+  width: 13%; /*this is a guess...*/
+/*  margin: 14px 0.625em; want to collapse margins?
+  text-align: center; */
 }
 
 #nav__list li:first-child {
-  margin-left: 0.625rem;
+  margin-left: 0.8%;
 }
 
 #nav__list li:last-child {
-  margin-right: 0.625rem;
+  margin-right: 0.8%;
 }
 
 .social__contacts label[for="signup--birthday"] {
@@ -755,11 +754,11 @@ span[class^="footer__social--links"] a {
 #header__logo {
     margin-top: 80px;
 }
-
+/*
 #nav__list li {
   width: 8em;
 }
-
+*/
 .callstoaction__text {
   margin-top: 20%;
 }
@@ -806,6 +805,11 @@ div[id^="social__contacts--"] {
 
 @media only screen and (max-width: 56.25rem), only screen and (max-device-width: 56.25em) {
 
+#nav__list li {
+  width: 22%;
+}
+
+
 .callstoaction__text {
   margin-top: 15%;
 }
@@ -821,12 +825,20 @@ div[id^="social__contacts--"] {
 
 
 #header__landing-background {
-  background: rgba(0, 0, 0, 0) url("../graphics/landing-bg-top-q18-2000x960.jpg") no-repeat scroll center -300px;
-  height: 618px;
+  background: rgba(0, 0, 0, 0) url("../graphics/landing-bg-top-q18-2000x960.jpg") no-repeat scroll center -250px;
+  height: 720px;
 }
 
 #header__landing-background::after {
-  height: 618px;
+  height: 720px;
+}
+
+.header__social--links {
+  width: 190px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 #introduction h1 {
@@ -1016,7 +1028,11 @@ body::before {
 
 RESPONSIVE LAYOUT
 
-- nav and social icons - sort out layout at end break 
+-fix nav wrapping 1240 to 1275px - DONE
+
+- reduce size of bg pix?
+
+- nav and social icons - sort out layout at end break - try btm 0 for social
 check on phones and ipad - all different
 
 - calls to action:;
@@ -1037,11 +1053,15 @@ width of labels with right borders
 depth of form when narrow - is there a happy medium?
 
 
+- make h1 and intro smaller typesize on <560px?
+
+
 FORM
 - labels or legends? are dd and mm labels, others legends?
 - dropdowns, don't style these, on IE, text is white on white bg
 - would be better with fields? 31 too long, names of months make more sense
 - also should have validation so that you can't enter, eg. 31 February
+- use placeholder text
 
 
 CAROUSEL
