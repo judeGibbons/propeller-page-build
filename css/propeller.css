@@ -155,7 +155,7 @@ h1 {
 }
 
 .strong {
-  font-style: bold;
+  font-weight: bold;
 }
 
 
@@ -313,7 +313,8 @@ li.header__social--links--instagram img {
 #callstoaction {
   color: #fff;
 }
-#callstoaction > div {
+
+div[id^="callstoaction--"] {   /* was #callstoaction > div */
   width: 25%;
   height: 0;
   padding-bottom: 25%;
@@ -321,7 +322,7 @@ li.header__social--links--instagram img {
   position: relative;
 }
 
-#callstoaction > div img {
+div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
   max-width: 100%;
   max-height: 100%;
   position: absolute;
@@ -329,9 +330,9 @@ li.header__social--links--instagram img {
 }
 
 
-#callstoaction img {
+/* #callstoaction img {
   display: block;
-}
+}*/
 
 .callstoaction__overlay {
   height: 100%;
@@ -346,11 +347,6 @@ li.header__social--links--instagram img {
   height: 64px;
   background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -35px -20px;
   margin: 20px auto;
-}
-
-.callstoaction__graphic img {
-  width: 100%;
-  max-width: 65px;
 }
 
 .callstoaction__text, .callstoaction__graphic, .callstoaction__click{
@@ -748,17 +744,13 @@ span[class^="footer__social--links"] a {
 
 
 #header__landing-background, #header__landing-background::after {
-    height: 918px;
+  height: 918px;
 }
 
 #header__logo {
-    margin-top: 80px;
+  margin-top: 80px;
 }
-/*
-#nav__list li {
-  width: 8em;
-}
-*/
+
 .callstoaction__text {
   margin-top: 20%;
 }
@@ -811,7 +803,7 @@ div[id^="social__contacts--"] {
 
 
 .callstoaction__text {
-  margin-top: 15%;
+  margin-top: 12%;
 }
 
 } /*end of media query max-width 900px */
@@ -849,7 +841,41 @@ div[id^="social__contacts--"] {
   margin: 16px 15% 0 15%;
 }
 
+.callstoaction__text {
+  margin-top: 10%;
+}
+
 } /*end of media query max-width 816px */
+
+
+
+
+/* -->>> LESS THAN 736px AND MORE THAN 560px <<<-- 
+@media only screen and (max-width: 46rem) and (min-width: 35rem), only screen and (max-device-width: 46rem) and (min-width: 35rem) { */
+
+
+/* -->>> LESS THAN 736px AND MORE THAN 560px <<<-- */
+@media only screen and (max-width: 46rem), only screen and (max-device-width: 46rem) {
+
+
+.callstoaction__text {
+  margin-top: 8%;
+  font-size: 0.825rem;
+  padding: 0 10%;
+}
+
+.callstoaction__graphic {
+  margin: 5px auto;
+}
+
+.callstoaction__click {
+  font-size: 0.825rem;
+}
+
+
+} /*end of media query max-width 736px */
+
+
 
 
 
@@ -889,8 +915,7 @@ div[id^="social__contacts--"] {
 }
 
 li[class^="header__social--links"] {
-margin-right: 0;
-    /*margin-bottom: 20px;*/
+  margin-right: 0;
   margin-top: 35%;
   bottom: 0;
 }
@@ -924,12 +949,14 @@ margin-right: 0;
   margin: 16px 5% 0 5%;
 }
 
-
-#callstoaction > div {
+div[id^="callstoaction--"] {
   padding-bottom: 50%;
   width: 50%;
 }
 
+.callstoaction__text {
+  margin-top: 15%;
+}
 
 .social__contacts {
   margin-top: 10px;
@@ -964,6 +991,10 @@ p.social__contacts__handle {
 
 .social__contacts--text {
   margin: 10px 10px 20px 10px;
+}
+
+.footer__contact::after {
+  margin: 0 7px;
 }
 
 } /*end of media query max-width 560px */
@@ -1055,6 +1086,12 @@ body::before {
   background-color: teal;
 }
 }
+@media only screen and (max-width: 46rem), only screen and (max-device-width: 46rem) {
+body::before {
+  content:'temp - max width 736px, 46rem';
+  background-color: red;
+}
+}
 @media only screen and (max-width: 35rem), only screen and (max-device-width: 35rem) {
 body::before {
   content:'temp - max width 560px, 35rem';
@@ -1109,27 +1146,35 @@ RESPONSIVE LAYOUT
 
 
 
-- nav and social icons - sort out layout at end break - try btm 0 for social
-check on phones and ipad - all different
-THIS DOESN'T WORK <400px - need more height?
+- nav and social icons - sort out layout at end break - try btm 0 for social - DONE
+- fix nav wrapping 1240 to 1275px - DONE
+- make h1 and intro smaller typesize on <560px? - DONE
 
 
 
 
-
--fix nav wrapping 1240 to 1275px - DONE
 
 - reduce size of bg pix?
 
-- calls to action:;
-.callstoaction__text, .callstoaction__graphic, .callstoaction__click 
-reduce 'top' gradually
+
+
+
+- callstoaction;
+reduce 'top' on h2 gradually
+make them all smaller
 comes a point where they no longer work - what then?
 hover doesn't work on mobile - display h2 permanently?
 
-- check social contact blocks margins/padding:
+at 816, need to move up a bit
+
+
+
+- social contact blocks margins/padding:
 h2 don't line up with lhs of input fields;
 rhs of handles don't line up with rh margin
+
+
+
 
 - instagram pics - fix these
 
@@ -1138,8 +1183,10 @@ form labels above inputs before they go to full width?
 width of labels with right borders
 depth of form when narrow - is there a happy medium?
 
-
-- make h1 and intro smaller typesize on <560px?
+- footer
+spans stick out of rhs on mobile (mine, iphone5)
+this is when a span and its ::after pipe wrap over a line
+change for mobile...
 
 
 FORM
@@ -1153,8 +1200,7 @@ FORM
 CAROUSEL
 - build it responsively
 - fade or move? - fade i think
-- do i need 
-- indicator rotates when picture changes
+- indicator rotates when picture changes - do i need <a>? not if it's just an indicator...
 - use no-js class on body to make nav show on load
 
 
@@ -1162,6 +1208,7 @@ IMAGES
 - make all social icons content - remove from sprite
 - redo all sprite images - put 1px margin round all of them - reset in css
 - social icons in footer - make content, put rollover like with nav ones
+- bg bottom pic - can see line through social contacts because it's not the same black
 
 
 ACCESSIBILITY
@@ -1172,6 +1219,7 @@ TEST
 - zooming out - check with rems (make breakpoints ems??)
 - with no js
 - IE, safari, phones
+
 
 need fallback etc for:
 box-sizing
