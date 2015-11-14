@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6, #nav__list li {
   text-transform: uppercase;
 }
 
-#nav__list a, footer a {
+#nav__list a, .callstoaction__click a, footer a {
   text-decoration: none;
 }
 
@@ -216,7 +216,7 @@ h1 {
   height: 40px;
   position: relative;
   text-align: center;
-  margin: 0 auto 128px auto;
+  margin: 0 auto 128px;
 }
 
 .header__social--links ul {
@@ -304,7 +304,7 @@ li.header__social--links--instagram img {
 }
 
 #introduction p {
-  margin: 16px 25% 0 25%;
+  margin: 16px 25% 0;
   line-height: 1.3888;
 }
 
@@ -360,7 +360,17 @@ div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
   margin-top: 25%;
 }
 
-
+.callstoaction__click {
+  width: 50%;
+  padding: 2px;
+  border-radius: 4px;
+  position: relative;
+  left: 25%;
+}
+ 
+.callstoaction__click a, .callstoaction__click:hover a {
+  color: #fff;
+}
 
 
 /* ====    INTERACTION   ==== */
@@ -397,6 +407,22 @@ div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
   transition: display .1s ease-in;
 }
 
+.callstoaction__click {
+  background-color: transparent;
+  -webkit-transition: background .1s ease-in;
+  -moz-transition: background .1s ease-in;
+  -o-transition: background .1s ease-in;
+  transition: background .1s ease-in;
+}
+ 
+.callstoaction__click:hover {
+  background-color: rgb(75,90,98); /* rgb for IE8 */
+  background-color: rgba(255,255,255,0.3); /* opacity on rollover */
+  -webkit-transition: background .1s ease-in;
+  -moz-transition: background .1s ease-in;
+  -o-transition: background .1s ease-in;
+  transition: background .1s ease-in;
+}
 
 /* ====     CAROUSEL     ==== */
 
@@ -510,15 +536,12 @@ div[id^="social__contacts--"]:last-child {
 }
 
 .social__contacts--text {
-  margin: 0 40px 40px 40px; /* changed from 52px because heavier font wrapped to 3 lines */
+  margin: 0 10% 40px; /* changed from 52px/13% because heavier font wrapped to 3 lines */
 }
-
+ 
 .social__contacts--tweet {
-  margin: 0 52px; /* make percentage on all margins? */
+  margin: 0 13%;
   text-align: left;
-  }
-
-.social__contacts--tweet {
   font-size: 0.9375rem;
   line-height: 1.4375; 
 }
@@ -540,7 +563,7 @@ input[type=text] {
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: transparent;
-  margin: 10px auto 26px auto;
+  margin: 10px auto 26px;
   border: 1px solid #fff;
   width: 190px;
   height: 35px;
@@ -552,7 +575,7 @@ input[type=text] {
 }
 
 .social__contacts fieldset {
-  margin: 0 52px 14px 52px;
+  margin: 0 52px 14px;
   border: 1px solid #fff;
   text-align: left;
 }
@@ -585,16 +608,6 @@ input[type=text] {
   font-family: inherit;
   font-size: inherit;
 }
-
-/*
-#signup--birthday--day option, #signup--birthday--day option {
-  font-size: 11px;
-}
-
-#signup--birthday--day option:first-child, #signup--birthday--day option:first-child {
-  font-size: 18pt;
-}
-*/
 
 
 
@@ -681,7 +694,7 @@ span[class^="footer__social--links"] a {
   padding-bottom: 30px;
   width: 25px;
   height: 36px;
-  margin: 36px auto 0 auto;
+  margin: 36px auto 0;
   background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -10px -48px;
 }
 
@@ -727,6 +740,10 @@ span[class^="footer__social--links"] a {
 
 #nav__list li:last-child {
   margin-right: 0.8%;
+}
+
+.social__contacts .container {
+  padding: 0 1.5%;
 }
 
 .social__contacts label[for="signup--birthday"] {
@@ -779,12 +796,8 @@ div[id^="social__contacts--"] {
   margin-left: 10px;
 }
 
-.social__contacts--text {
-  margin: 0 10px 40px 10px; /* changed from 52px because heavier font wrapped to 3 lines */
-}
-
 .social__contacts--tweet {
-  margin: 0 10px; /* make percentage on all margins? */
+  margin: 0 4.5%;
 }
 
 } /*end of media query max-width 1100px */
@@ -854,7 +867,7 @@ div[id^="social__contacts--"] {
 @media only screen and (max-width: 46rem) and (min-width: 35rem), only screen and (max-device-width: 46rem) and (min-width: 35rem) { */
 
 
-/* -->>> LESS THAN 736px AND MORE THAN 560px <<<-- */
+/* -->>> LESS THAN 736px <<<-- */
 @media only screen and (max-width: 46rem), only screen and (max-device-width: 46rem) {
 
 
@@ -872,6 +885,9 @@ div[id^="social__contacts--"] {
   font-size: 0.825rem;
 }
 
+.social__contacts button {
+  width: 100%;
+}
 
 } /*end of media query max-width 736px */
 
@@ -880,7 +896,7 @@ div[id^="social__contacts--"] {
 
 
 /* -->>> LESS THAN 560px <<<-- */
-/* ->> move to mobile view <<- */
+/* ->> changes to mobile layout <<- */
 
 @media only screen and (max-width: 35rem), only screen and (max-device-width: 35rem) {
 
@@ -967,11 +983,15 @@ div[id^="social__contacts--"], div[id^="social__contacts--"]:first-child, div[id
   margin: 0;
 }
 
+div[id^="social__contacts--"]:last-child {
+  border-bottom: 0;
+}
+
 div[id^="social__contacts--"] {
   width: 97%;
   border-bottom: 1px solid #fff;
   margin-bottom: 20px;
-  padding: 10px 1.5% 20px 1.5% ;
+  padding: 10px 1.5% 20px;
 }
 
 div[id^="social__contacts--"] h2 {
@@ -993,7 +1013,7 @@ p.social__contacts__handle {
   margin: 10px 10px 20px 10px;
 }
 
-.footer__contact::after {
+.footer__contact::after, span[class^="footer__social--links--"] {
   margin: 0 7px;
 }
 
