@@ -427,41 +427,99 @@ div[id^="callstoaction--"] img {
   -o-transition: background .1s ease-in;
   transition: background .1s ease-in;
 }
+
+
 /* ====     CAROUSEL     ==== */
 
 #carousel {
-  height: 490px;
-  background-color: orange;
+  max-width: 1240px;
+  max-height: 490px;
   position: relative;
   overflow: hidden;
+  float: left;
+  margin-top: 0;
+  list-style: none;
+  padding-left: 0;
 }
+
+.no-js ul#carousel__slides li:first-child {
+  position: relative;
+  opacity: 1;
+}
+
+.carousel__slide {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding-left: 0;
+  display: block;
+}
+
+.carousel__slide {
+  z-index: 1;
+  opacity: 0;
+  -ms-transition: opacity 1.5s ease-in;
+  -moz-transition: opacity 1.5s ease-in;
+  -webkit-transition: opacity 1.5s ease-in;
+  -o-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+}
+
+li.carousel__slide.active {
+  opacity: 0;
+  -ms-transition: opacity 1.5s ease-out;
+  -moz-transition: opacity 1.5s ease-out;
+  -webkit-transition: opacity 1.5s ease-out;
+  -o-transition: opacity 1.5s ease-out;
+  transition: opacity 1.5s ease-out;
+}
+
+#carousel li.carousel__slide.next {
+  position: static;
+  z-index: 10;
+  opacity: 1;
+  -ms-transition: opacity 1.5s ease-out;
+  -moz-transition: opacity 1.5s ease-out;
+  -webkit-transition: opacity 1.5s ease-out;
+  -o-transition: opacity 1.5s ease-out;
+  transition: opacity 1.5s ease-out;
+}
+
+#carousel li.carousel__slide.start {
+  position: static;
+  z-index: 10;
+  opacity: 1;
+  -ms-transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.carousel__slide img {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+}
+
 
 .carousel__indicator__container {
   position: absolute;
   bottom: 25px;
   width: 100%;
+  z-index: 30;
 }
 
-.carousel__indicator {
+#carousel__indicator__list {
   display: inline-block;
 }
 
-.indicator1 {
+.carousel__indicator.active {
+  /* put delay on this same as slides */
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-
-li[class^="carousel__slide"] {
-  /*width: 10px;
-  height: 10px; needs to be responsive */
-  float: left;
-}
-
-li[class^="carousel__slide"] img {
-  display: block;
 }
 
 li[class^="carousel__indicator"] {
@@ -475,83 +533,6 @@ li[class^="carousel__indicator"] {
 li[class^="carousel__indicator"]:last-child {
   margin-right: 0;
 }
-
-
-
-
-/* From Landshape */
-
-
-.no-js ul#slideshow li:first-child + li {
-  position: relative;
-  opacity: 1;
-}
-
-
-#slideshow {
-  float: left;
-  position: relative;
-  width: 100%;
-  margin-bottom: 1em;
-  margin-top: 0;
-  list-style:none;
-  padding-left: 0;
-}
-
-#slideshow li {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  padding-left: 0;
-}
-
-.slideshowimage {
-    z-index: 1;
-    opacity: 0;
-    -ms-transition: opacity 1.5s ease-in;
-    -moz-transition: opacity 1.5s ease-in;
-    -webkit-transition: opacity 1.5s ease-in;
-    -o-transition: opacity 1.5s ease-in;
-    transition: opacity 1.5s ease-in;
-}
-
-li.active {
-    opacity: 0;
-    -ms-transition: opacity 1.5s ease-out;
-    -moz-transition: opacity 1.5s ease-out;
-    -webkit-transition: opacity 1.5s ease-out;
-    -o-transition: opacity 1.5s ease-out;
-    transition: opacity 1.5s ease-out;
-}
-
-#slideshow li.next {
-  position: static;
-    z-index: 10;
-    opacity: 1;
-    -ms-transition: opacity 1.5s ease-out;
-    -moz-transition: opacity 1.5s ease-out;
-    -webkit-transition: opacity 1.5s ease-out;
-    -o-transition: opacity 1.5s ease-out;
-    transition: opacity 1.5s ease-out;
-}
-
-#slideshow li.start {
-  position: static;
-  z-index: 10;
-    opacity: 1;
-    -ms-transition: none;
-    -moz-transition: none;
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-}
-
-#slideshow img {
-  position: relative;
-  width: 100%;
-  max-width: 960px;
-}
-
 
 
 /* ========================== */
