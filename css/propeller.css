@@ -179,6 +179,10 @@ h1 {
 /* ====   NAVIGATION    ==== */
 
 
+#nav__head {
+  display: none;
+}
+
 #nav__list {
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
@@ -194,6 +198,10 @@ h1 {
   border-radius: 4px;
   font-style: normal;
   text-align: center;
+}
+
+#nav__list li.social-link {
+  display: none;
 }
 
 #nav__list li:first-child {
@@ -223,7 +231,7 @@ h1 {
   display: inline-block;
 }
 
-li[class^="header__social--links"], span[class^="footer__social--links"] {
+li[class^="header__social--links"], span#footer__social--links {
   display: inline-block;
   position: relative;
 }
@@ -293,7 +301,7 @@ li.header__social--links--instagram img {
 
 #introduction {
   margin: 0 auto;
-  padding: 70px 0 42px 0;
+  padding: 70px 0 42px;
   background-color: #fff;
 }
 
@@ -314,7 +322,7 @@ li.header__social--links--instagram img {
   color: #fff;
 }
 
-div[id^="callstoaction--"] {   /* was #callstoaction > div */
+div[id^="callstoaction--"] {
   width: 25%;
   height: 0;
   padding-bottom: 25%;
@@ -322,17 +330,12 @@ div[id^="callstoaction--"] {   /* was #callstoaction > div */
   position: relative;
 }
 
-div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
+div[id^="callstoaction--"] img {
   max-width: 100%;
   max-height: 100%;
   position: absolute;
   display: block;
 }
-
-
-/* #callstoaction img {
-  display: block;
-}*/
 
 .callstoaction__overlay {
   height: 100%;
@@ -345,11 +348,11 @@ div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
 .callstoaction__graphic {
   width: 65px;
   height: 64px;
-  background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -35px -20px;
+  background: url("../graphics/sprite-94x77.png") no-repeat -27px -11px;
   margin: 20px auto;
 }
 
-.callstoaction__text, .callstoaction__graphic, .callstoaction__click{
+.callstoaction__text, .callstoaction__graphic, .callstoaction__click {
   position: relative;
   text-align: center;
 }
@@ -367,7 +370,7 @@ div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
   position: relative;
   left: 25%;
 }
- 
+
 .callstoaction__click a, .callstoaction__click:hover a {
   color: #fff;
 }
@@ -414,7 +417,7 @@ div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
   -o-transition: background .1s ease-in;
   transition: background .1s ease-in;
 }
- 
+
 .callstoaction__click:hover {
   background-color: rgb(75,90,98); /* rgb for IE8 */
   background-color: rgba(255,255,255,0.3); /* opacity on rollover */
@@ -423,7 +426,6 @@ div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
   -o-transition: background .1s ease-in;
   transition: background .1s ease-in;
 }
-
 /* ====     CAROUSEL     ==== */
 
 #carousel {
@@ -443,18 +445,13 @@ div[id^="callstoaction--"] img {   /* was #callstoaction > div img */
   display: inline-block;
 }
 
-.carousel__indicator--one {
-  -transform: rotate(45deg);
+.indicator1 {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
-/*is this needed?*/
-li[class^="carousel__indicator"] a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
 
 li[class^="carousel__slide"] {
   /*width: 10px;
@@ -476,6 +473,82 @@ li[class^="carousel__indicator"] {
 
 li[class^="carousel__indicator"]:last-child {
   margin-right: 0;
+}
+
+
+
+
+/* From Landshape */
+
+
+.no-js ul#slideshow li:first-child + li {
+  position: relative;
+  opacity: 1;
+}
+
+
+#slideshow {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top: 0;
+  list-style:none;
+  padding-left: 0;
+}
+
+#slideshow li {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding-left: 0;
+}
+
+.slideshowimage {
+    z-index: 1;
+    opacity: 0;
+    -ms-transition: opacity 1.5s ease-in;
+    -moz-transition: opacity 1.5s ease-in;
+    -webkit-transition: opacity 1.5s ease-in;
+    -o-transition: opacity 1.5s ease-in;
+    transition: opacity 1.5s ease-in;
+}
+
+li.active {
+    opacity: 0;
+    -ms-transition: opacity 1.5s ease-out;
+    -moz-transition: opacity 1.5s ease-out;
+    -webkit-transition: opacity 1.5s ease-out;
+    -o-transition: opacity 1.5s ease-out;
+    transition: opacity 1.5s ease-out;
+}
+
+#slideshow li.next {
+  position: static;
+    z-index: 10;
+    opacity: 1;
+    -ms-transition: opacity 1.5s ease-out;
+    -moz-transition: opacity 1.5s ease-out;
+    -webkit-transition: opacity 1.5s ease-out;
+    -o-transition: opacity 1.5s ease-out;
+    transition: opacity 1.5s ease-out;
+}
+
+#slideshow li.start {
+  position: static;
+  z-index: 10;
+    opacity: 1;
+    -ms-transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+#slideshow img {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
 }
 
 
@@ -538,7 +611,7 @@ div[id^="social__contacts--"]:last-child {
 .social__contacts--text {
   margin: 0 10% 40px; /* changed from 52px/13% because heavier font wrapped to 3 lines */
 }
- 
+
 .social__contacts--tweet {
   margin: 0 13%;
   text-align: left;
@@ -601,6 +674,7 @@ input[type=text] {
   font-style: italic;
 }
 
+
 #signup--birthday--day, #signup--birthday--month {
   background-color: transparent;
   border: 0;
@@ -608,7 +682,6 @@ input[type=text] {
   font-family: inherit;
   font-size: inherit;
 }
-
 
 
 /* ========================== */
@@ -644,50 +717,29 @@ span[class^="footer__social--links"]:last-child {
   margin-right: 0;
 }
 
-span[class^="footer__social--links"] .a11y {
-  position: absolute;
-  left: -9999px;
-}
-
 .footer__contact::after {
   content: "|";
   margin: 0 20px;
 }
 
 span[class^="footer__social--links"] a {
-  background-image: url("../graphics/sprite-logos-graphics-100x84.png");
-  background-repeat: no-repeat;
   display: inline-block;
 }
 
 .footer__social--links--facebook a {
   width: 8px;
   height: 14px;
-  background-position: -34px -6px;
-}
-
-.footer__social--links--facebook a:hover {
-  background-position: -42px -6px;
 }
 
 .footer__social--links--twitter a {
   width: 14px;
   height: 11px;
-  background-position: -21px -11px;
 }
 
-.footer__social--links--twitter a:hover {
-  background-position: -21px -0px;
-}
 
 .footer__social--links--instagram a {
   width: 14px;
   height: 13px;
-  background-position: -21px -35px;
-}
-
-.footer__social--links--instagram:hover a {
-  background-position: -21px -22px;
 }
 
 #propeller__icon {
@@ -695,7 +747,7 @@ span[class^="footer__social--links"] a {
   width: 25px;
   height: 36px;
   margin: 36px auto 0;
-  background: url("../graphics/sprite-logos-graphics-100x84.png") no-repeat -10px -48px;
+  background: url("../graphics/sprite-94x77.png") no-repeat -1px -39px;
 }
 
 
@@ -729,9 +781,7 @@ span[class^="footer__social--links"] a {
 }
 
 #nav__list li {
-  width: 13%; /*this is a guess...*/
-/*  margin: 14px 0.625em; want to collapse margins?
-  text-align: center; */
+  width: 13%;
 }
 
 #nav__list li:first-child {
@@ -779,9 +829,8 @@ span[class^="footer__social--links"] a {
 }
 
 div[id^="social__contacts--"] {
-  width: 31%; /* 400px at full width */
-  margin: 0 1.5%; /* 10px at full width  
-  FIX LR MARGINS ON CONTAINER, float none, inline block doesn't work */
+  width: 31%;
+  margin: 0 1.5%;  
 }
 
 .social__contacts label[for="signup--"] {
@@ -813,7 +862,6 @@ div[id^="social__contacts--"] {
 #nav__list li {
   width: 22%;
 }
-
 
 .callstoaction__text {
   margin-top: 12%;
@@ -896,7 +944,7 @@ div[id^="social__contacts--"] {
 
 
 /* -->>> LESS THAN 560px <<<-- */
-/* ->> changes to mobile layout <<- */
+/*   instigates mobile layout  */
 
 @media only screen and (max-width: 35rem), only screen and (max-device-width: 35rem) {
 
@@ -930,32 +978,95 @@ div[id^="social__contacts--"] {
   width: 40px;
 }
 
+.no-js .header__social--links {
+  display: none;
+}
+
 li[class^="header__social--links"] {
   margin-right: 0;
   margin-top: 35%;
   bottom: 0;
 }
 
-
-
-#nav__list {
-  border: 1px solid #fff;
-  height: 40px;
-  margin: 0 7% 0 0;
-  overflow: hidden;
+#nav__head {
+  color: #fff;
+  display: none;
+  font-family: "Montserrat","Arial",sans-serif;
+  font-style: normal;
+  margin-right: 3%;
   position: absolute;
   right: 0;
-  top: 0;
-  width: 40px;
-}
-
-#nav__list::before {
-  content: 'menu';
-  font-family: "Montserrat", "Arial", sans-serif;
-  color: #fff;
   text-transform: uppercase;
+  top: -12px;
 }
 
+.no-js #nav__head {
+  visibility: hidden;
+}
+
+#nav__head.closed {
+  display: block;
+}
+
+#nav__head::after {
+  content: '';
+  background: transparent url("../graphics/sprite-94x77.png") no-repeat -1px -12px;
+  display: inline-block;
+  height: 1.5rem;
+  margin-left: 10px;
+  position: relative;
+  top: 6px;
+  width: 1.5rem;
+}
+
+.no-js #nav__list {
+  top: -4px;
+}
+
+#nav__list {
+  background-color: rgba(0,0,0,0.3);
+  display: block;
+  float: right;
+  padding: 4px;
+  position: absolute;
+  right: 3%;
+  top: 24px;
+  z-index: 30;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 4px;
+}
+
+.no-js #nav__list {
+  top: -4px;
+}
+
+.js #nav__list.closed {
+  display: none;
+}
+
+#nav__list li {
+  display: block;
+  border: 0;
+  margin: 4px 0;
+  padding: 0 4px;
+  text-align: right;
+  width: auto;
+  font-size: 0.9rem;
+}
+
+.no-js #nav__list li.social-link {
+  display: block;
+}
+
+#nav__list li:first-child {
+  margin-left: 0;
+}
+
+#nav__list a {
+  margin: 0;
+}
 
 #introduction h1 {
   margin: 0 5%;
@@ -1074,6 +1185,9 @@ body::before {
   display: block;
   content:'max width 2000px, min width 1260px';
   background-color: green;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 @media only screen and (min-width: 125rem), only screen and (min-device-width: 125rem) {
@@ -1192,6 +1306,11 @@ at 816, need to move up a bit
 - social contact blocks margins/padding:
 h2 don't line up with lhs of input fields;
 rhs of handles don't line up with rh margin
+- at 736px, change layout a bit
+bigger margins, put labels above form fields
+nb buttons touch just before mobile version 
+that's because buttons width is 190px
+make it 100%
 
 
 
