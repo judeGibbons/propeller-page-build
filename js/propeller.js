@@ -133,17 +133,16 @@ function carousel() {
     
     // create the correct number of carousel indicators
 
-    var indicatorsArray =[];
+    //var indicatorsArray =[];
     var indicators = document.getElementById('carousel__indicator__list');
     for (i=1, maxi = imagesArray.length+1; i<maxi; i++) {
       var thisIndicator = document.createElement("li");
       document.getElementById('carousel__indicator__list').appendChild(thisIndicator);
       thisIndicator.className = "carousel__indicator indicator" + i;
-      push.indicatorsArray(thisIndicator);
+      //push.indicatorsArray(thisIndicator);
     }
   }
 
-console.log(indicatorsArray);
   //use counter to create active and next in turn, and put active class on
   var activeImage;
   var nextImage;
