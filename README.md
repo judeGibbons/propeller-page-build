@@ -10,7 +10,7 @@ The code is completely handwritten with no use of libraries, frameworks or prepr
 
 **Responsiveness:** in this case I built the full-width version first to match the visual rather than build it mobile-first, as is recommended.
 
-**JavaScript:** I have used JavaScript to display the menu on mobile when the 'menu' link is clicked. I have created a version which displays without JavaScript, but as this would permanently overlay the social media links I have added an anchor to the social media links in the footer. The JavaScript code is based on that which I wrote for a project a while back, a website for a <a href="https://github.com/judeGibbons/landshape" target="_blank">landscape design company</a> (although in retrospect I should have started from scratch!).
+**JavaScript:** I have used JavaScript to display the menu on mobile when the 'menu' link is clicked. I have created a version which displays without JavaScript, but as this would permanently overlay the social media links I have added an anchor to the social media links in the footer. The JavaScript code is based on that which I wrote for a project a while back, a website for a <a href="https://github.com/judeGibbons/landshape" target="_blank">landscape design company</a> (although in retrospect perhaps I should have started from scratch!).
 
 **Needs more work:**
 
