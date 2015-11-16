@@ -175,9 +175,7 @@ h1 {
 }
 
 
-
 /* ====   NAVIGATION    ==== */
-
 
 #nav__head {
   display: none;
@@ -187,7 +185,6 @@ h1 {
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
   margin-bottom: 57px;
-  white-space: nowrap;
 }
 
 #nav__list li {
@@ -277,18 +274,12 @@ li.header__social--links--instagram img {
 
 #nav__list li, li[class^="header__social--links"], .social__contacts button {
   background-color: transparent;
-  -webkit-transition: background .1s ease-in;
-  -moz-transition: background .1s ease-in;
-  -o-transition: background .1s ease-in;
   transition: background .1s ease-in;
 }
 
 #nav__list li:hover, li[class^="header__social--links"]:hover, .social__contacts button:hover {
   background-color: rgb(75,90,98); /* rgb for IE8 */
   background-color: rgba(255,255,255,0.3); /* opacity on rollover */
-  -webkit-transition: background .1s ease-in;
-  -moz-transition: background .1s ease-in;
-  -o-transition: background .1s ease-in;
   transition: background .1s ease-in;
 }
 
@@ -381,50 +372,32 @@ div[id^="callstoaction--"] img {
 
 .callstoaction__overlay {
   background-color: rgba(0,0,0,0);
-  -webkit-transition: background-color .1s ease-in;
-  -moz-transition: background-color .1s ease-in;
-  -o-transition: background-color .1s ease-in;
   transition: background-color .1s ease-in;
 }
 
 .callstoaction__overlay:hover {
   background-color: rgba(0,0,0,0.7);
-  -webkit-transition: background-color .1s ease-in;
-  -moz-transition: background-color .1s ease-in;
-  -o-transition: background-color .1s ease-in;
   transition: background-color .1s ease-in;
 }
 
 .callstoaction__overlay [class^="callstoaction__"] {
   visibility: hidden;
-  -webkit-transition: display .1s ease-in;
-  -moz-transition: display .1s ease-in;
-  -o-transition: display .1s ease-in;
   transition: display .1s ease-in;
 }
   
 .callstoaction__overlay:hover [class^="callstoaction__"] {
   visibility: visible;
-  -webkit-transition: display .1s ease-in;
-  -moz-transition: display .1s ease-in;
-  -o-transition: display .1s ease-in;
   transition: display .1s ease-in;
 }
 
 .callstoaction__click {
   background-color: transparent;
-  -webkit-transition: background .1s ease-in;
-  -moz-transition: background .1s ease-in;
-  -o-transition: background .1s ease-in;
   transition: background .1s ease-in;
 }
 
 .callstoaction__click:hover {
   background-color: rgb(75,90,98); /* rgb for IE8 */
   background-color: rgba(255,255,255,0.3); /* opacity on rollover */
-  -webkit-transition: background .1s ease-in;
-  -moz-transition: background .1s ease-in;
-  -o-transition: background .1s ease-in;
   transition: background .1s ease-in;
 }
 
@@ -458,19 +431,11 @@ div[id^="callstoaction--"] img {
 .carousel__slide {
   z-index: 1;
   opacity: 0;
-  -ms-transition: opacity 1.5s ease-in;
-  -moz-transition: opacity 1.5s ease-in;
-  -webkit-transition: opacity 1.5s ease-in;
-  -o-transition: opacity 1.5s ease-in;
   transition: opacity 1.5s ease-in;
 }
 
 li.carousel__slide.active {
   opacity: 0;
-  -ms-transition: opacity 1.5s ease-out;
-  -moz-transition: opacity 1.5s ease-out;
-  -webkit-transition: opacity 1.5s ease-out;
-  -o-transition: opacity 1.5s ease-out;
   transition: opacity 1.5s ease-out;
 }
 
@@ -478,10 +443,6 @@ li.carousel__slide.active {
   position: static;
   z-index: 10;
   opacity: 1;
-  -ms-transition: opacity 1.5s ease-out;
-  -moz-transition: opacity 1.5s ease-out;
-  -webkit-transition: opacity 1.5s ease-out;
-  -o-transition: opacity 1.5s ease-out;
   transition: opacity 1.5s ease-out;
 }
 
@@ -489,10 +450,6 @@ li.carousel__slide.active {
   position: static;
   z-index: 10;
   opacity: 1;
-  -ms-transition: none;
-  -moz-transition: none;
-  -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -501,7 +458,6 @@ li.carousel__slide.active {
   width: 100%;
   max-width: 1240px;
 }
-
 
 .carousel__indicator__container {
   position: absolute;
@@ -514,18 +470,17 @@ li.carousel__slide.active {
   display: inline-block;
 }
 
-.carousel__indicator.active {
-  /* put delay on this same as slides */
+.carousel__indicator:first-child { /* this should be on class of 'active', when it's working */
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
 li[class^="carousel__indicator"] {
   width: 10px;
   height: 10px;
-  margin-right: 10px; /* except when rotated? */
+  margin-right: 10px;
   background-color: #fff;
   float: left;
 }
@@ -548,10 +503,10 @@ li[class^="carousel__indicator"]:last-child {
 }
 
 div[id^="social__contacts--"] {
-  width: 32.258%; /* 400px at full width */
+  width: 32.258%;
   float: left;
   position: relative;
-  margin: 0 0.80645%; /* 10px at full width */
+  margin: 42px 0.80645% 0;
 }
 
 div[id^="social__contacts--"] h2 {
@@ -633,9 +588,10 @@ input[type=text] {
   margin: 0 52px 14px;
   border: 1px solid #fff;
   text-align: left;
+  height: 2.25rem;
 }
 
-.social__contacts input[type="text"], .social__contacts label {
+.social__contacts input[type="text"], .social__contacts label, .social__contacts legend {
   display: inline-block;
 }
 
@@ -656,6 +612,13 @@ input[type=text] {
   font-style: italic;
 }
 
+.social__contacts legend {
+  margin: 8px 0 0 2%;
+  position: absolute;
+  border-right: 1px solid #fff;
+  height: 20px;
+  padding-right: 6px;
+}
 
 #signup--birthday--day, #signup--birthday--month {
   background-color: transparent;
@@ -663,6 +626,9 @@ input[type=text] {
   color: #fff;
   font-family: inherit;
   font-size: inherit;
+  position: relative;
+  margin: 6px 10px 0 0;
+  left: 6rem;
 }
 
 
@@ -743,9 +709,6 @@ span[class^="footer__social--links"] a {
 @media only screen and (min-width: 125rem), only screen and (min-device-width: 125rem) {
 
 #header__landing-background, #footer__home-background {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
   }
 } /*end of media query min-width 2000px */
@@ -778,7 +741,7 @@ span[class^="footer__social--links"] a {
   padding: 0 1.5%;
 }
 
-.social__contacts label[for="signup--birthday"] {
+.social__contacts legend[for="signup--birthday"] {
   width: 35%;
   margin-right: 0;
 }
@@ -804,18 +767,16 @@ span[class^="footer__social--links"] a {
   margin-top: 20%;
 }
 
-
-
 .social__contacts {
   text-align: center;
 }
 
 div[id^="social__contacts--"] {
   width: 31%;
-  margin: 0 1.5%;  
+  margin: 42px 1.5% 0;  
 }
 
-.social__contacts label[for="signup--"] {
+.social__contacts label[for="signup--"], .social__contacts legend[for="signup--"] {
   width: 28%;
 }
 
@@ -835,8 +796,6 @@ div[id^="social__contacts--"] {
 
 
 
-
-
 /* -->>> LESS THAN 900px <<<-- */
 
 @media only screen and (max-width: 56.25rem), only screen and (max-device-width: 56.25em) {
@@ -849,8 +808,12 @@ div[id^="social__contacts--"] {
   margin-top: 12%;
 }
 
-} /*end of media query max-width 900px */
+#signup--birthday--day, #signup--birthday--month {
+  margin: 6px 0 0;
+  left: 5rem;
+}
 
+} /*end of media query max-width 900px */
 
 
 
@@ -892,11 +855,6 @@ div[id^="social__contacts--"] {
 
 
 
-
-/* -->>> LESS THAN 736px AND MORE THAN 560px <<<-- 
-@media only screen and (max-width: 46rem) and (min-width: 35rem), only screen and (max-device-width: 46rem) and (min-width: 35rem) { */
-
-
 /* -->>> LESS THAN 736px <<<-- */
 @media only screen and (max-width: 46rem), only screen and (max-device-width: 46rem) {
 
@@ -920,9 +878,6 @@ div[id^="social__contacts--"] {
 }
 
 } /*end of media query max-width 736px */
-
-
-
 
 
 /* -->>> LESS THAN 560px <<<-- */
@@ -1018,6 +973,7 @@ li[class^="header__social--links"] {
   margin-bottom: 0;
   border: 0;
   border-radius: 4px;
+  white-space: nowrap;
 }
 
 .no-js #nav__list {
@@ -1106,14 +1062,23 @@ p.social__contacts__handle {
   margin: 10px 10px 20px 10px;
 }
 
+.social__contacts--instagram--image:first-child img {
+  right: 0;
+}
+
 .footer__contact::after, span[class^="footer__social--links--"] {
   margin: 0 7px;
 }
 
+.social__contacts legend {
+  width: 26%;
+}
+
+#signup--birthday--day, #signup--birthday--month {
+  left: 10rem;
+}
+
 } /*end of media query max-width 560px */
-
-
-
 
 
 /* -->>> LESS THAN 450px <<<-- */
@@ -1135,10 +1100,6 @@ p.social__contacts__handle {
 } /*end of media query max-width 450px */
 
 
-
-
-
-
 /* -->>> LESS THAN 400px <<<-- */
 /* ->> move to mobile view <<- */
 
@@ -1148,227 +1109,4 @@ li[class^="header__social--links"] {
   margin-top: 15%;
 }
 
-/*doesn't work for <350 eg iphone 4*/
-
 } /*end of media query max-width 400px */
-
-
-
-
-/* ========================== */
-/* ====   TEMP FOR DEV   ==== */
-/* ========================== */
-body::before {
-  font-size: 0.8rem;
-  height: 1rem;
-  color: #fff;
-  font-style: normal;
-  line-height: 1rem;
-  display: block;
-  content:'max width 2000px, min width 1260px';
-  background-color: green;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-@media only screen and (min-width: 125rem), only screen and (min-device-width: 125rem) {
-body::before {
-  content:'temp - min width 2000px, 125rem';
-  background-color: red;
-}
-}
-@media only screen and (max-width: 78.75rem), only screen and (max-device-width: 78.75rem) {
-body::before {
-  content:'temp - max width 1260px, 78.75rem';
-  background-color: orange;
-}
-}
-@media only screen and (max-width: 68.75rem), only screen and (max-device-width: 68.75rem) {
-body::before {
-  content:'temp - max width 1100px, 68.75rem';
-  background-color: blue;
-}
-}
-@media only screen and (max-width: 56.25rem), only screen and (max-device-width: 56.25em) {
-body::before {
-  content:'temp - max width 900px, 56.25rem';
-  background-color: purple;
-}
-}
-@media only screen and (max-width: 51rem), only screen and (max-device-width: 51rem) {
-body::before {
-  content:'temp - max width 816px, 51rem';
-  background-color: teal;
-}
-}
-@media only screen and (max-width: 46rem), only screen and (max-device-width: 46rem) {
-body::before {
-  content:'temp - max width 736px, 46rem';
-  background-color: red;
-}
-}
-@media only screen and (max-width: 35rem), only screen and (max-device-width: 35rem) {
-body::before {
-  content:'temp - max width 560px, 35rem';
-  background-color: green;
-}
-}
-
-
-
-
-
-
-@media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
-body::before {
-  content:'temp - max width 500px';
-  background-color: black;
-}
-}
-@media only screen and (max-width: 450px), only screen and (max-device-width: 450px) {
-body::before {
-  content:'temp - max width 450px';
-  background-color: fuchsia;
-}
-}
-@media only screen and (max-width: 400px), only screen and (max-device-width: 400px) {
-body::before {
-  content:'temp - max width 400px';
-  background-color: black;
-}
-}
-@media only screen and (max-width: 350px), only screen and (max-device-width: 350px) {
-body::before {
-  content:'temp - max width 350px';
-  background-color: fuchsia;
-}
-}
-@media only screen and (max-width: 300px), only screen and (max-device-width: 300px) {
-body::before {
-  content:'temp - max width 300px';
-  background-color: black;
-}
-}
-/* ========================== */
-/* == END OF TEMP FOR DEV === */
-/* ========================== */
-
-
-
-/* ==== TO DO ==== 
-
-RESPONSIVE LAYOUT
-
-
-
-- nav and social icons - sort out layout at end break - try btm 0 for social - DONE
-- fix nav wrapping 1240 to 1275px - DONE
-- make h1 and intro smaller typesize on <560px? - DONE
-
-
-
-
-
-- reduce size of bg pix?
-
-
-
-
-- callstoaction;
-reduce 'top' on h2 gradually
-make them all smaller
-comes a point where they no longer work - what then?
-hover doesn't work on mobile - display h2 permanently?
-
-at 816, need to move up a bit
-
-
-
-- social contact blocks margins/padding:
-h2 don't line up with lhs of input fields;
-rhs of handles don't line up with rh margin
-- at 736px, change layout a bit
-bigger margins, put labels above form fields
-nb buttons touch just before mobile version 
-that's because buttons width is 190px
-make it 100%
-
-
-
-
-- instagram pics - fix these
-
-- contact form:
-form labels above inputs before they go to full width?
-width of labels with right borders
-depth of form when narrow - is there a happy medium?
-
-- footer
-spans stick out of rhs on mobile (mine, iphone5)
-this is when a span and its ::after pipe wrap over a line
-change for mobile...
-
-
-FORM
-- labels or legends? are dd and mm labels, others legends?
-- dropdowns, don't style these, on IE, text is white on white bg
-- would be better with fields? 31 too long, names of months make more sense
-- also should have validation so that you can't enter, eg. 31 February
-- use placeholder text
-
-
-CAROUSEL
-- build it responsively
-- fade or move? - fade i think
-- indicator rotates when picture changes - do i need <a>? not if it's just an indicator...
-- use no-js class on body to make nav show on load
-
-
-IMAGES
-- make all social icons content - remove from sprite
-- redo all sprite images - put 1px margin round all of them - reset in css
-- social icons in footer - make content, put rollover like with nav ones
-- bg bottom pic - can see line through social contacts because it's not the same black
-
-
-ACCESSIBILITY
-- hover/focus state on links, social icons
-
-
-TEST
-- zooming out - check with rems (make breakpoints ems??)
-- with no js
-- IE, safari, phones
-
-
-need fallback etc for:
-box-sizing
-:hover used on li
-using html5 containers
-:after or ::after
-child > selector
-first-child/last child selector
-border radius
-
-
-
-
-
-/* ==== NOTES ==== 
-
-Beware of Safari not supporting background-size shorthand!
-ipad = c.788px
-Mobile first vs mobile last
-Vendor prefixes
-carousel autoplay bad
-sources - landshape, googling stackoverflow, css-tricks, mdn
-not using responsive images (scrset or picture)
-social icons are semantic content
-social links - done differently in header and footer - could make both the same (list) and pull in with php include
-don't like 'click here'
-home bg pic - have used one that is already blurred and desaturated rather than use css filters
-percentage rounding errors - modern browsers use pixel fudging
-accessibility - aria roles
-
- ==== */

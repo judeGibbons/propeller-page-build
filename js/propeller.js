@@ -3,10 +3,7 @@ document.addEventListener("DOMContentLoaded",init,false);
 function init() {
   addjsclass();
   createClosedElementsArray();
-  //addListenerToMenuIcon();
   addListenerToWindow();
-  //dropdownmenutriangle();
-  //togglemenutriangle();
   if (document.getElementById('carousel')) {
     carousel();
   }
@@ -19,45 +16,7 @@ function addjsclass() {
 }
 
 
-
-/*
-//possibly add if(canvasdd.getContext) test
-function dropdownmenutriangle() {
-  var canvasdd = document.getElementById('dropdownmenutriangle')||null;
-  if (canvasdd) {
-    var cdd = canvasdd.getContext('2d');
-    canvasdd.width  = 60;
-    canvasdd.height = 26;
-    cdd.fillStyle = '#fff';
-    cdd.strokeStyle = '#ccc';
-    cdd.lineWidth = 2;
-    cdd.beginPath();
-    cdd.moveTo(0, 26);
-    cdd.lineTo(30, 0);
-    cdd.lineTo(60, 26);
-    cdd.fill();
-    cdd.stroke();
-  }
-}
-
-function togglemenutriangle() {
-  var canvastg = document.getElementById('togglemenutriangle')||null;
-  if (canvastg) {
-    var ctg = canvastg.getContext('2d');
-    canvastg.width  = 60;
-    canvastg.height = 26;
-    ctg.fillStyle = '#fff';
-    ctg.strokeStyle = '#ccc';
-    ctg.lineWidth = 2;
-    ctg.beginPath();
-    ctg.moveTo(0, 26);
-    ctg.lineTo(30, 0);
-    ctg.lineTo(60, 26);
-    ctg.fill();
-    ctg.stroke();
-  }
-}
-*/
+//--->>>   MENU   <<<---//
 
 // adds event listener to window so it can toggle mobile menu, and can close menu when clicked elsewhere
 
@@ -104,7 +63,7 @@ function toggleMenu(e) {
 
 
 
-
+//--->>> CAROUSEL <<<---//
 
 function carousel() {
   var imagesArray = [];
@@ -133,17 +92,17 @@ function carousel() {
     
     // create the correct number of carousel indicators
 
-    //var indicatorsArray =[];
+    var indicatorsArray =[];
     var indicators = document.getElementById('carousel__indicator__list');
     for (i=1, maxi = imagesArray.length+1; i<maxi; i++) {
       var thisIndicator = document.createElement("li");
       document.getElementById('carousel__indicator__list').appendChild(thisIndicator);
       thisIndicator.className = "carousel__indicator indicator" + i;
-      //push.indicatorsArray(thisIndicator);
+      indicatorsArray.push(thisIndicator);
     }
   }
 
-  //use counter to create active and next in turn, and put active class on
+  //use counter to create active and next classes on images in turn, and put active class on
   var activeImage;
   var nextImage;
   var counter;
@@ -163,9 +122,6 @@ function carousel() {
       nextImage.className += (" next"); 
       imagesArray[(imagesArray.length)-2].className = imagesArray[(imagesArray.length)-2].className.replace(/(\s)start/,"");
     
-
-      //if slide<n> is active, add active class to indicator<n>
-
 
     //check if css3 available, if not call fade
     function getSupportedTransform() {
@@ -222,7 +178,7 @@ function carousel() {
     }, 30);
   }
       
-    //call functions
+  //call functions
 
   getElementsByClassName("carousel__slide");
   appendActiveClass();
