@@ -130,6 +130,13 @@ function carousel() {
       imagesArray[(imagesArray.length)-2].className = imagesArray[(imagesArray.length)-2].className.replace(/(\s)start/,"");
         console.log(imagesArray)
     
+
+
+find element indicator[i], add active class to this, remove it from others
+
+
+
+    /*
      // counter2 = (indicatorsArray.length-1);
       counter2 = 0;
       for (var j=0, maxj=indicatorsArray.length; j<maxj; j++) {
@@ -142,7 +149,7 @@ function carousel() {
       //indicatorsArray[(indicatorsArray.length)-2].className = indicatorsArray[(indicatorsArray.length)-2].className.replace(/(\s)start/,"");
       indicatorsArray[0].className = indicatorsArray[0].className.replace(/(\s)start/,"");
         console.log(indicatorsArray)
-
+*/
 
     //check if css3 available, if not call fade
     function getSupportedTransform() {
