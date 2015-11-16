@@ -470,7 +470,7 @@ li.carousel__slide.active {
   display: inline-block;
 }
 
-.carousel__indicator:first-child { /* this should be on class of 'active', when it's working */
+.carousel__indicator.active, .carousel__indicator.start { /* this should be on class of 'active', when it's working */
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);

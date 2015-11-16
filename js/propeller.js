@@ -67,6 +67,7 @@ function toggleMenu(e) {
 
 function carousel() {
   var imagesArray = [];
+    var indicatorsArray =[];
   //make array of images
   //if native css3 implementation works, use that to create array, else use js
 
@@ -85,14 +86,13 @@ function carousel() {
         if ( pattern.test(allListItems[i].className) ) {
           imagesArray[j] = allListItems[i];
           j++;
-
         }
       }
     }
-    
+
     // create the correct number of carousel indicators
 
-    var indicatorsArray =[];
+
     var indicators = document.getElementById('carousel__indicator__list');
     for (i=1, maxi = imagesArray.length+1; i<maxi; i++) {
       var thisIndicator = document.createElement("li");
@@ -100,28 +100,49 @@ function carousel() {
       thisIndicator.className = "carousel__indicator indicator" + i;
       indicatorsArray.push(thisIndicator);
     }
+    //indicatorsArray[(indicatorsArray.length-2)].className += (" start");
+    indicatorsArray[0].className += (" start");
   }
+
+
 
   //use counter to create active and next classes on images in turn, and put active class on
   var activeImage;
   var nextImage;
+  var activeIndicator;
   var counter;
+  var counter2;
   function appendActiveClass() {
+
     counter = (imagesArray.length-1);
-    var intervalTime = 5000;
+    var intervalTime = 3500;
     var changeClassSpeed = setInterval(changeActiveClass, intervalTime);
     function changeActiveClass() {
-      for (var i=0; i < imagesArray.length; i++) {
+      for (var i=0, maxi=imagesArray.length; i<maxi; i++) {
         imagesArray[i].className = imagesArray[i].className.replace(/(\s)active/,"");
         imagesArray[i].className = imagesArray[i].className.replace(/(\s)next/,"");
         activeImage = imagesArray[(counter-1)%(imagesArray.length)];
         nextImage = imagesArray[(counter)%(imagesArray.length)];
       }
       counter ++;
-      activeImage.className += (" active");   
+      activeImage.className += (" active");
       nextImage.className += (" next"); 
       imagesArray[(imagesArray.length)-2].className = imagesArray[(imagesArray.length)-2].className.replace(/(\s)start/,"");
+        console.log(imagesArray)
     
+     // counter2 = (indicatorsArray.length-1);
+      counter2 = 0;
+      for (var j=0, maxj=indicatorsArray.length; j<maxj; j++) {
+        indicatorsArray[j].className = indicatorsArray[j].className.replace(/(\s)active/,"");
+        activeIndicator = indicatorsArray[(counter2)%(indicatorsArray.length)];
+        console.log(counter2)
+      }
+      counter2 ++;
+      activeIndicator.className += (" active");
+      //indicatorsArray[(indicatorsArray.length)-2].className = indicatorsArray[(indicatorsArray.length)-2].className.replace(/(\s)start/,"");
+      indicatorsArray[0].className = indicatorsArray[0].className.replace(/(\s)start/,"");
+        console.log(indicatorsArray)
+
 
     //check if css3 available, if not call fade
     function getSupportedTransform() {
